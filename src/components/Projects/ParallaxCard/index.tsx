@@ -25,7 +25,7 @@ const ParallaxCard: FC<Props> = ({ project }) => {
           }
         </ProjectStackTextGroup>
         <ProjectViewButton>
-          <a href={project.siteUrl} target='_blank' rel="noreferrer">View</a>
+          <a href={project.siteUrl} target='_blank' rel='noreferrer'>View</a>
         </ProjectViewButton>
       </ParallaxContentWrapper>
     </ParallaxCardWrapper>

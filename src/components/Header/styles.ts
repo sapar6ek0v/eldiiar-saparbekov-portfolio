@@ -62,6 +62,7 @@ export const HeaderLink = styled(Link)`
 export const Button = styled.button`
   background: none;
   border: 1px solid transparent;
+  border-radius: 2px;
   outline: none;
   cursor: pointer;
   transition: border 0.4s linear;

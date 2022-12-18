@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import AboutMe from '../components/AboutMe';
+import CallToAction from '../components/CallToAction';
 import Experience from '../components/Experience';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
@@ -12,8 +13,8 @@ export default function Home() {
     <>
       <Head>
         <title>Eldiiar Saparbekov</title>
-        <meta name="description" content="About Eldiiar Saparbekov work experience" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name='description' content='Eldiiar Saparbekov personal website' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <Layout>
@@ -29,6 +30,9 @@ export default function Home() {
         <section id='projects'>
           <Projects />
         </section>
+        <Container id='contacts'>
+          <CallToAction />
+        </Container>
         <Footer />
       </Layout>
     </>

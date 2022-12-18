@@ -38,4 +38,8 @@ export const Container = styled.section`
   &:nth-child(3) {
     padding: 100px 60px;
   }
+
+  &:nth-child(5) {
+    padding: 100px 60px;
+  }
 `;
