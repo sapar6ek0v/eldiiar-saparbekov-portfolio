@@ -1,34 +1,32 @@
 import { FC } from 'react';
-import { useTypewriter } from 'react-simple-typewriter';
-import { HeroStack, HeroWrapper, JobDescCursor, JobDescription, JobTitle } from './styles';
+import { Cursor, useTypewriter } from 'react-simple-typewriter';
+import { variants } from '../../constants/animation-constants';
+import { colors } from '../../constants/colors';
+import { HeroStack, HeroWrapper, JobDescription, JobTitle, JobDescFlexContainer, CursorWrapper } from './styles';
 
 const Hero: FC = () => {
-  const [text, count] = useTypewriter({
-    words: ['Hi, I`m Eldiiar', 'Currently, I`m looking for a job'],
+  const [text] = useTypewriter({
+    words: ['Hi, I`m Eldiiar', '<I`m really fond of Frontend Development />'],
     loop: true,
     delaySpeed: 400,
+    typeSpeed: 200,
   });
 
-  const variants = {
-    hidden: { opacity: 0, x: 0, y: 20 },
-    enter: { opacity: 1, x: 0, y: 0 },
-    exit: { opacity: 0, x: -0, y: 20 }
-  };
 
   return (
     <HeroWrapper
       initial='hidden'
       animate='enter'
       exit='exit'
-      variants={variants}
-      transition={{ duration: 0.4, type: 'easeInOut' }}
     >
       <HeroStack>
-        <JobTitle>Frontend Developer</JobTitle>
-        <JobDescription>
-          <span>{text}</span>
-          <JobDescCursor cursorColor='red' />
-        </JobDescription>
+        <JobTitle variants={variants} custom={1}>Frontend Developer</JobTitle>
+        <JobDescFlexContainer variants={variants} custom={1.1}>
+          <JobDescription>{text}</JobDescription>
+          <CursorWrapper>
+            <Cursor cursorColor={colors.blue} cursorBlinking cursorStyle='|' />
+          </CursorWrapper>
+        </JobDescFlexContainer>
       </HeroStack>
     </HeroWrapper>
   );

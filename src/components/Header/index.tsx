@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import { BrandGithub, BrandLinkedin, BrandTelegram } from 'tabler-icons-react';
-import { HeaderContainer, HeaderFixedContainer, HeaderGroup, HeaderLink } from './styles';
+import { SocialIcon } from 'react-social-icons';
+import { colors } from '../../constants/colors';
+import { Button, HeaderContainer, HeaderFixedContainer, HeaderGroup, HeaderLink } from './styles';
 
 const links = [
   {
@@ -32,9 +33,36 @@ const Header: FC = () => {
             animate={{ x: 0, scale: 1, opacity: 1 }}
             transition={{ duration: 1.5 }}
           >
-            <BrandGithub size={20} strokeWidth={2} color={'rgba(255, 255, 255, 0.92)'} />
-            <BrandLinkedin size={20} strokeWidth={2} color={'rgba(255, 255, 255, 0.92)'} />
-            <BrandTelegram size={20} strokeWidth={2} color={'rgba(255, 255, 255, 0.92)'} />
+            <Button>
+              <SocialIcon
+                url='https://github.com/sapar6ek0v'
+                network='github'
+                fgColor={colors.white}
+                bgColor='transparent'
+                style={{ height: 30, width: 30 }}
+                target='_blank'
+              />
+            </Button>
+            <Button>
+              <SocialIcon
+                url='https://www.linkedin.com/in/eldiiar-saparbekov/'
+                network='linkedin'
+                fgColor={colors.white}
+                bgColor='transparent'
+                style={{ height: 30, width: 30 }}
+                target='_blank'
+              />
+            </Button>
+            <Button>
+              <SocialIcon
+                url='https://t.me/Eldiiar_Saparbekov'
+                network='telegram'
+                fgColor={colors.white}
+                bgColor='transparent'
+                style={{ height: 30, width: 30 }}
+                target='_blank'
+              />
+            </Button>
           </HeaderGroup>
           <HeaderGroup
             gap={20}

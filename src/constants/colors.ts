@@ -1,0 +1,17 @@
+export const colors = {
+  blue: '#46c2cb',
+  darkBlue: '#233554',
+  white: 'rgba(255, 255, 255, 0.92)',
+  bg: 'rgba(17, 17, 17, 0.9)',
+  black: '#000',
+  lightDark: '#0000',
+  gray: 'rgba(255, 255, 255, 0.55)',
+  secondaryGray: 'rgba(255, 255, 255, 0.61)',
+  projectBg: 'rgba(0, 0, 0, 0.4)',
+  shadow: 'rgba(0, 0, 0, 0.26)',
+  orange: 'rgb(237, 202, 133)',
+  lnOrange: 'rgba(237, 202, 133, 1)',
+  lnPink: 'rgba(240, 147, 176, 1)',
+  lnPurple: 'rgba(161, 98, 232, 1)',
+  lnBlue: 'rgba(160, 233, 255, 1)',
+};

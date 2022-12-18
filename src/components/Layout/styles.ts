@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { colors } from '../../constants/colors';
 
 export const LayoutWrapper = styled.div`
-  background: #111;
+  background: ${colors.black};
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -13,5 +14,4 @@ export const ContentContainer = styled.main`
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  gap: 40px;
 `;

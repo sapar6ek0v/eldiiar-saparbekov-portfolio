@@ -1,7 +1,13 @@
 import { nanoid } from 'nanoid';
 import { FC } from 'react';
 import { Project } from '../data';
-import { ParallaxCardWrapper, ParallaxContentWrapper, ProjectStackText, ProjectStackTextGroup, ProjectViewButton } from './styles';
+import {
+  ParallaxCardWrapper,
+  ParallaxContentWrapper,
+  ProjectStackText,
+  ProjectStackTextGroup,
+  ProjectViewButton
+} from './styles';
 
 type Props = {
   project: Project
@@ -19,7 +25,7 @@ const ParallaxCard: FC<Props> = ({ project }) => {
           }
         </ProjectStackTextGroup>
         <ProjectViewButton>
-          <a href='#' target='_blank'>View</a>
+          <a href={project.siteUrl} target='_blank' rel="noreferrer">View</a>
         </ProjectViewButton>
       </ParallaxContentWrapper>
     </ParallaxCardWrapper>

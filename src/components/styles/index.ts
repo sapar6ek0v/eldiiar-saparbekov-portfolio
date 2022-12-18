@@ -1,13 +1,15 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { colors } from '../../constants/colors';
 
-export const Title = styled.h5`
+export const Title = styled(motion.h5)`
   font-size: 32px;
   display: flex;
   align-items: center;
   gap: 20px;
   position: relative;
   white-space: nowrap;
-  color: rgba(255, 255, 255, 0.92);
+  color: ${colors.white};
   margin-bottom: 40px;
 
   &::after {
@@ -15,7 +17,7 @@ export const Title = styled.h5`
     display: block;
     width: 300px;
     height: 1px;
-    background-color: #46c2cb;
+    background-color: ${colors.blue};
   }
 `;
 
@@ -30,7 +32,7 @@ export const Container = styled.section`
   }
 
   &:nth-child(2) {
-    padding-bottom: 100px;
+    padding: 100px 60px;
   }
 
   &:nth-child(3) {

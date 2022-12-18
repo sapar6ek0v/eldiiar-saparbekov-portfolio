@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../constants/colors';
 
 export const FooterWrapper = styled.footer`
   padding: 20px 60px;
@@ -11,5 +12,5 @@ export const FooterTitle = styled.h5`
   opacity: 0.4;
   font-size: 14px;
   line-height: 20px;
-  color: rgba(255, 255, 255, 0.92);
+  color: ${colors.white};
 `;

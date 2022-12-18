@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styled from 'styled-components';
+import { colors } from '../../constants/colors';
 
 export const AboutMeWrapper = styled(motion.div)`
   width: 100%;
@@ -12,75 +13,81 @@ export const Grid = styled.div`
   gap: 50px;
 `;
 
-export const DescriptionStack = styled.div`
+export const DescriptionStack = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 15px;
 `;
 
-export const Description = styled.p`
+export const Description = styled(motion.p)`
   font-size: 16px;
   line-height: 20px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.92);
+  color: ${colors.white};
 `;
 
-export const ImageWrapper = styled.div`
-  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  display: block;
-  position: relative;
+export const ImageWrapper = styled(motion.div)`
   width: 100%;
-  border-radius: 4px;
-  background-color: #64ffda;
-
-  &::before,
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  }
-
-  &::before {
-    top: 0px;
-    left: 0px;
-    background-color: var(--navy);
-    mix-blend-mode: screen;
-  }
-
-  &::after {
-    border: 2px solid var(--green);
-    top: 20px;
-    left: 20px;
-    z-index: -1;
-  }
 `;
 
 export const StyledImage = styled(Image)`
-  position: relative;
+  --s: 15px;
+  --b: 2px;
+  --w: 270px;
+  --h: 270px;
+  --c: ${colors.blue};
+  --m: left var(--_i, 0%) top var(--_f), bottom var(--_i, 0%) left var(--_f),
+    top var(--_i, 0%) right var(--_f), right var(--_i, 0%) bottom var(--_f);
+  --_f: 10% /45% 45% no-repeat linear-gradient(${colors.black} 0 0);
+  --_g: var(--c) var(--b), ${colors.lightDark} 0 calc(100% - var(--b)), var(--c) 0;
+
   display: inline-block;
   border-radius: 4px;
-  width: 200px;
-  height: 200px;
+  width: var(--w);
+  height: var(--h);
   object-fit: cover;
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+  aspect-ratio: 1;
+  padding: calc(2 * var(--s));
+  background: linear-gradient(var(--_g)) 50%/100% var(--_i, 100%) no-repeat,
+    linear-gradient(90deg, var(--_g)) 50% / var(--_i, 100%) 100% no-repeat;
+  outline: calc(var(--w) / 2) solid transparent;
+  outline-offset: calc(var(--w) / -2 - 2 * var(--s));
+  transition: 0.4s linear;
+  -webkit-mask: var(--m);
+  mask: var(--m);
+  filter: grayscale();
 
-  /* &::before,
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  &:hover {
+    outline: var(--b) solid var(--c);
+    outline-offset: calc(var(--s) / -2);
+    --_i: calc(100% - 2 * var(--s));
+    filter: grayscale(0);
+    --_k: 10%;
   }
+`;
 
+export const TechnologyGroup = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  gap: 100px;
+`;
+
+export const TechnologyStack = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const TechnologyCard = styled.li`
+  position: relative;
+  color: ${colors.white};
+  font-size: 14px;
+  padding-left: 15px;
   &::before {
-    background-color: #64ffda;
-  } */
+    content: '▹';
+    color: ${colors.blue};
+    position: absolute;
+    left: 0px;
+  }
 `;

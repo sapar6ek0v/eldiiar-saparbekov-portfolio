@@ -1,16 +1,9 @@
-import { nanoid } from 'nanoid';
 import { FC, useState } from 'react';
-import { Title } from '../styles';
-import { experienceButtons, experiences } from './data';
+import { variants } from '../../constants/animation-constants';
+import { experienceButtons, experiences } from './ExperienceCard/data';
 import ExperienceCard from './ExperienceCard';
 import { Button, ButtonStack, ExperienceFlexContainer, ExperienceTitle, ExperienceWrapper } from './styles';
 import { Experience } from './types';
-
-const variants = {
-  hidden: { opacity: 0, x: 0, y: 20 },
-  enter: { opacity: 1, x: 0, y: 0 },
-  exit: { opacity: 0, x: -0, y: 20 }
-};
 
 const Experience: FC = () => {
   const [showExperience, setShowExperience] = useState<string>(experienceButtons[0].experienceId);
@@ -39,14 +32,22 @@ const Experience: FC = () => {
   return (
     <ExperienceWrapper
       initial='hidden'
-      animate='enter'
+      whileInView='enter'
       exit='exit'
-      variants={variants}
-      transition={{ duration: 0.4, type: 'easeInOut' }}
+      viewport={{ amount: 0.2, once: true }}
     >
-      <ExperienceTitle><p>Where I`ve worked</p></ExperienceTitle>
-      <ExperienceFlexContainer>
-        <ButtonStack>
+      <ExperienceTitle variants={variants} custom={1}>
+        <p>Where I`ve worked</p>
+      </ExperienceTitle>
+      <ExperienceFlexContainer
+        initial='hidden'
+        whileInView='enter'
+        exit='exit'
+        viewport={{ amount: 0.2, once: true }}
+      >
+        <ButtonStack
+          variants={variants} custom={1}
+        >
           {
             experienceButtons.map((button) => (
               <Button

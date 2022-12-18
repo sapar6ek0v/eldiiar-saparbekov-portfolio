@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import { Experience, ExperienceButton } from './types';
+import { Button, Experience } from '../types';
 
 export const experiences: Experience[] = [
   {
@@ -7,6 +7,7 @@ export const experiences: Experience[] = [
     title: 'Junior Frontend Developer',
     company: '@Boomerang Delivery',
     workingDates: 'August - October 2022',
+    companySiteUrl: 'https://boomerang.kg/',
     responsibilities: [
       {
         id: nanoid(4),
@@ -38,6 +39,7 @@ export const experiences: Experience[] = [
     title: 'Full Stack Developer/Intern',
     company: '@ZenBit',
     workingDates: 'April - July 2022',
+    companySiteUrl: 'https://zenbit.tech/',
     responsibilities: [
       {
         id: nanoid(4),
@@ -97,7 +99,7 @@ export const experiences: Experience[] = [
   },
 ];
 
-export const experienceButtons: ExperienceButton[] = [
+export const experienceButtons: Button[] = [
   {
     id: nanoid(4),
     text: 'Boomerang Delivery',

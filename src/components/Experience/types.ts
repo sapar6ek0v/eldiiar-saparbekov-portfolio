@@ -3,6 +3,7 @@ export type Experience = {
   title: string;
   company: string;
   workingDates: string;
+  companySiteUrl: string;
   responsibilities: Responsibility[];
 };
 
@@ -12,7 +13,7 @@ export type Responsibility = {
   responsibility: string;
 };
 
-export type ExperienceButton = {
+export type Button = {
   id: string;
   text: string;
   experienceId: string;

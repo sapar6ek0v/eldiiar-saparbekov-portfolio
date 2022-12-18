@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { colors } from '../../../constants/colors';
 
 type ParallaxCardWrapperProps = {
   imgUrl: string;
 };
 
 export const ParallaxCardWrapper = styled.div`
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: ${colors.projectBg};
   background-image: ${(props: ParallaxCardWrapperProps) => `url(${props.imgUrl})`};
   background-attachment: fixed;
   background-position: center;
@@ -34,11 +35,10 @@ export const ProjectStackTextGroup = styled.div`
 
 export const ProjectStackText = styled.p`
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 20px;
-  color: #fff;
-  /* background-image: linear-gradient(0% #111, 100% #46c2cb);
-  background-clip: text; */
+  color: ${colors.white};
+  letter-spacing: 1.2px;
 
   &::after {
     content: ',';
@@ -50,23 +50,23 @@ export const ProjectStackText = styled.p`
 `;
 
 export const ProjectViewButton = styled.button`
-  background-color: #111;
+  background-color: ${colors.black};
   border: none;
   outline: none;
-  box-shadow: 0 1px 4px rgba(255, 255, 255, 0.6);
+  box-shadow: ${colors.shadow} 1.95px 1.95px 2.6px;
   text-align: center;
   width: 170px;
   height: 60px;
 
   &:hover {
     a {
-      color: #fff;
+      color: ${colors.white};
     }
   }
 
   a {
     text-decoration: none;
-    color: #46c2cb;
+    color: ${colors.blue};
     font-weight: 700;
     font-size: 24px;
     display: inline-block;
@@ -78,7 +78,7 @@ export const ProjectViewButton = styled.button`
       position: absolute;
       bottom: 0px;
       left: 0px;
-      background-color: #46c2cb;
+      background-color: ${colors.blue};
       height: 2px;
       width: 100%;
     }
