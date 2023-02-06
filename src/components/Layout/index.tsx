@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
-import Header from '../Header';
-import { ContentContainer, LayoutWrapper } from './styles';
+import Header from './Header';
+import { LayoutWrapper, Container } from './styles';
 
 type Props = {
   children: ReactNode;
@@ -8,11 +8,11 @@ type Props = {
 
 const Layout: FC<Props> = ({ children }) => {
   return (
-    <LayoutWrapper>
+    <LayoutWrapper >
       <Header />
-      <ContentContainer>
+      <Container>
         {children}
-      </ContentContainer>
+      </Container>
     </LayoutWrapper>
   );
 };

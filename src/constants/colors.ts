@@ -1,7 +1,7 @@
 export const colors = {
   blue: '#46c2cb',
   darkBlue: '#233554',
-  white: 'rgba(255, 255, 255, 0.92)',
+  // white: 'rgba(255, 255, 255, 0.92)',
   bg: 'rgba(17, 17, 17, 0.9)',
   black: '#000',
   lightDark: '#0000',
@@ -14,4 +14,7 @@ export const colors = {
   lnPink: 'rgba(240, 147, 176, 1)',
   lnPurple: 'rgba(161, 98, 232, 1)',
   lnBlue: 'rgba(160, 233, 255, 1)',
+  yellow: '#fdc60c',
+  darkGray: '#7c7c7c',
+  white: '#fff',
 };

@@ -1,17 +1,13 @@
 import styled from 'styled-components';
-import { colors } from '../../constants/colors';
 
-export const LayoutWrapper = styled.div`
-  background: ${colors.black};
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+export const LayoutWrapper = styled.main`
+  margin-top: 68px;
 `;
 
-export const ContentContainer = styled.main`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
+export const Container = styled.div`
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 68px);
 `;

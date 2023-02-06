@@ -5,9 +5,9 @@ export const variants = {
     x: 0,
     y: 0,
     transition: {
-      type: 'easeInOut',
-      delay: custom * 0.2,
-      bounce: 0.4,
+      type: 'tween',
+      delay: custom * 0.1,
+      bounce: 0.1,
     },
   }),
   exit: { opacity: 0, x: -0, y: 20 },
