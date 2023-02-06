@@ -22,13 +22,13 @@ const SmoothScroll: FC<Props> = ({ children }) => {
     }
   }, [])
 
-  useLayoutEffect(() => {
-    const resizeObserver = new ResizeObserver((entries: any) =>
-      resizePageHeight(entries)
-    )
-    scrollRef && resizeObserver.observe(scrollRef!.current)
-    return () => resizeObserver.disconnect()
-  }, [scrollRef, resizePageHeight])
+  // useLayoutEffect(() => {
+  //   const resizeObserver = new ResizeObserver((entries: any) =>
+  //     resizePageHeight(entries)
+  //   )
+  //   !!scrollRef && resizeObserver.observe(scrollRef.current)
+  //   return () => resizeObserver.disconnect()
+  // }, [scrollRef, resizePageHeight])
 
   const { scrollY } = useViewportScroll()
   const transform = useTransform(scrollY, [0, pageHeight], [0, -pageHeight])
