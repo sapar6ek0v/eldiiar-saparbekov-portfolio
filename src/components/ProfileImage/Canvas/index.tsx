@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, memo } from 'react';
 
 import { base64Img } from '../data';
 
@@ -148,4 +148,4 @@ const Canvas = () => {
   )
 };
 
-export default Canvas;
+export default memo(Canvas);

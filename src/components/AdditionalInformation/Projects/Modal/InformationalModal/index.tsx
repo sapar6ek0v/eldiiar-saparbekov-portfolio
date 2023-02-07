@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { Wrapper, InfoContainer, InfoTitle, InfoDescription } from './styles'
 
 type Props = {
@@ -19,4 +19,4 @@ const InformationalModal: FC<Props> = ({ isOpen, onClose }) => {
   )
 }
 
-export default InformationalModal
+export default memo(InformationalModal)

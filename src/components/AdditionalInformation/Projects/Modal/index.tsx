@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useState, memo } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeftLong, faArrowRightLong, faX } from '@fortawesome/free-solid-svg-icons';
 
@@ -78,4 +78,4 @@ const Modal: FC<Props> = ({ isOpen, onClose, project }) => {
   )
 }
 
-export default Modal
+export default memo(Modal)

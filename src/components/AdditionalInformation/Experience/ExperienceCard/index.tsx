@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 
 import { variants } from '../../../../constants/animation-constants'
 import { Description } from '../../styles'
@@ -25,4 +25,4 @@ const ExperienceCard: FC<Props> = ({ experience, index }) => {
   )
 }
 
-export default ExperienceCard
+export default memo(ExperienceCard)

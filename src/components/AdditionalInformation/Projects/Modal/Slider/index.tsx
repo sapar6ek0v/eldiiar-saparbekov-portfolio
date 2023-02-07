@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 
 import { Image, Wrapper } from './styles'
 
@@ -29,4 +29,4 @@ const Slider: FC<Props> = ({ image }) => {
   )
 }
 
-export default Slider
+export default memo(Slider)

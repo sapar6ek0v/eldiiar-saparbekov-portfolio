@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useState, memo } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
@@ -33,4 +33,4 @@ const ProjectCard: FC<Props> = ({ project, index }) => {
   )
 }
 
-export default ProjectCard
+export default memo(ProjectCard)
