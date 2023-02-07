@@ -4,13 +4,13 @@ import styled from 'styled-components';
 
 import { colors } from '../../../constants/colors';
 
-export const HeaderFixedContainer = styled.header`
+export const HeaderFixedContainer = styled(motion.header)`
   top: 0;
   position: fixed;
   width: 100%;
   z-index: 4;
   /* background: #181818; */
-  background-color: #212121;
+  background-color: ${colors.darkBrown};
   /* backdrop-filter: blur(10px); */
 `;
 
@@ -43,7 +43,7 @@ export const HeaderItem = styled.li`
 export const HeaderLink = styled(Link)`
   font-weight: 400;
   font-size: 16px;
-  color: #7c7c7c;
+  color: ${colors.darkGray};
   position: relative;
   transition: all 0.4s linear;
 
@@ -52,18 +52,18 @@ export const HeaderLink = styled(Link)`
     height: 2px;
     width: 100%;
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateY(-50%);
     position: absolute;
     bottom: -8px;
-    background-color: #fdc60c;
-    transition: color 0.4s linear;
+    background-color: ${colors.yellow};
+    transition: all 0.4s linear;
   }
 
   &:hover {
-    color: #fdc60c;
+    color: ${colors.yellow};
     &::before {
       opacity: 1;
-      transform: translateX(0%);
+      transform: translateY(0%);
     }
   }
 `;
@@ -78,14 +78,13 @@ export const HeaderButton = styled.button`
   padding: 2px 7px;
   width: 37px;
   height: 35px;
+  color: ${colors.darkGray};
+  font-size: 16px;
+  text-decoration: none;
 
   &:is(:hover, :active, :focus) {
     outline: none;
-    border-color: #fdc60c;
-    color: #fdc60c;
+    border-color: ${colors.yellow};
+    color: ${colors.yellow};
   }
-
-  color: #7c7c7c;
-  font-size: 16px;
-  text-decoration: none;
 `;

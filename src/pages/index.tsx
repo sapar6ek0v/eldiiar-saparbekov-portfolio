@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Layout from '../components/Layout';
 import AdditionalInformation from '../components/AdditionalInformation';
 import ProfileImage from '../components/ProfileImage';
-import SmoothScroll from '../components/SmoothScroll';
+// import SmoothScroll from '../components/SmoothScroll';
 
 export default function Home() {
 

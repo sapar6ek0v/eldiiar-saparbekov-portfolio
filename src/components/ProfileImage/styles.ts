@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../constants/colors';
 
 export const Wrapper = styled.section`
   position: fixed;
@@ -30,7 +31,7 @@ export const NameWrapper = styled.div`
 export const Name = styled.p`
   font-size: 12px;
   font-weight: 300;
-  color: #fff;
+  color: ${colors.white};
   letter-spacing: 0.02em;
 `;
 
@@ -39,7 +40,7 @@ export const SeperatorLine = styled.div`
   width: 4rem;
   height: 0;
   border-width: 0;
-  border-color: #fff;
+  border-color: ${colors.white};
   border-style: solid;
   border-bottom-width: 0.1rem;
 `;
@@ -65,7 +66,7 @@ export const Frame = styled.div`
   top: 0;
   left: 0;
   z-index: -2;
-  border: 1px solid #fff;
+  border: 1px solid ${colors.white};
 `;
 
 export const Frame1 = styled(Frame)`

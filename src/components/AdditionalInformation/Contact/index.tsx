@@ -1,42 +1,44 @@
 import { FC } from 'react'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
-import { ComponentWrapper, Description, ExtraSmallTitle, Stack, Title, TitleLine, TitleStack } from '../styles'
-import { Button, CircleIcon, Container, Form, FormFooter, Input, InformTitle, Textarea } from './styles'
+import { variants } from '../../../constants/animation-constants'
+import ContactForm from './ContactForm'
+import { Container } from './styles'
+import {
+  ComponentWrapper,
+  Description,
+  ExtraSmallTitle,
+  Stack,
+  Title,
+  TitleLine,
+  TitleStack
+} from '../styles'
 
-const Contact: FC = () => {
+const Contacts: FC = () => {
   return (
-    <ComponentWrapper>
+    <ComponentWrapper
+      id='contacts'
+      initial='hidden'
+      whileInView='enter'
+      exit='exit'
+      viewport={{ amount: 0.3 }}
+    >
       <Container>
         <Stack>
           <TitleStack>
-            <ExtraSmallTitle>CONTACT</ExtraSmallTitle>
-            <Title>Let&apos;s get in touch</Title>
-            <TitleLine />
+            <ExtraSmallTitle variants={variants} custom={1.3}>CONTACT</ExtraSmallTitle>
+            <Title variants={variants} custom={1.4}>Let&apos;s get in touch</Title>
+            <TitleLine variants={variants} custom={1.5} />
           </TitleStack>
 
-          <Description>
+          <Description variants={variants} custom={1.6}>
             Fill out my form below and send me an email.
           </Description>
         </Stack>
 
-        <Form>
-          <Input type='text' placeholder='* Name' />
-          <Input type='text' placeholder='* E-mail' />
-          <Input type='number' placeholder='Phone' />
-          <Textarea rows={5} placeholder='* Message'></Textarea>
-          <FormFooter>
-            <Button>
-              <span>Send</span>
-              <CircleIcon icon={faArrowRight} />
-            </Button>
-
-            <InformTitle>* Marked fields are required to fill.</InformTitle>
-          </FormFooter>
-        </Form>
+        <ContactForm />
       </Container>
     </ComponentWrapper>
   )
 }
 
-export default Contact
+export default Contacts

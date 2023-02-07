@@ -1,4 +1,7 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
+
+import { colors } from '../../../constants/colors';
 
 export const Grid = styled.div`
   display: grid;
@@ -6,8 +9,8 @@ export const Grid = styled.div`
   gap: 20px;
 `;
 
-export const SkillCard = styled.div`
-  color: #7c7c7c;
+export const SkillCard = styled(motion.div)`
+  color: ${colors.darkGray};
   svg {
     width: 40px;
     height: 40px;

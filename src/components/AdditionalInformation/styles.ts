@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { colors } from '../../constants/colors';
 
 export const Wrapper = styled.section`
   grid-column-start: 2;
@@ -9,11 +11,11 @@ export const Container = styled.div`
   width: 82%;
 `;
 
-export const ExtraSmallTitle = styled.p`
+export const ExtraSmallTitle = styled(motion.p)`
   font-size: 8px;
   letter-spacing: 0.14em;
   font-weight: 800;
-  color: #fff;
+  color: ${colors.white};
   text-align: start;
 `;
 
@@ -23,12 +25,12 @@ export const Stack = styled.div`
   gap: 1.5rem;
 `;
 
-export const Line = styled.div`
+export const Line = styled(motion.div)`
   width: 1.6rem;
   height: 0;
   border-width: 0;
   margin-top: 1rem;
-  border-color: #fff;
+  border-color: ${colors.white};
   border-style: solid;
   border-bottom-width: 0.1rem;
 `;
@@ -37,13 +39,12 @@ export const TitleStack = styled(Stack)`
   gap: 1.4rem;
 `;
 
-export const Title = styled.h5`
+export const Title = styled(motion.h5)`
   font-size: 2rem;
   letter-spacing: 0.03em;
   line-height: 1;
   font-weight: 300;
-  font-style: normal;
-  color: #fff;
+  color: ${colors.white};
   padding-left: 1rem;
 `;
 
@@ -51,15 +52,15 @@ export const TitleLine = styled(Line)`
   margin-top: 1px;
 `;
 
-export const Description = styled.p`
+export const Description = styled(motion.p)`
   font-size: 20px;
   line-height: 1.4em;
   letter-spacing: -0.005em;
   font-weight: 300;
-  color: #7c7c7c;
+  color: ${colors.darkGray};
 `;
 
-export const ComponentWrapper = styled.section`
+export const ComponentWrapper = styled(motion.section)`
   padding-bottom: 107.6px;
 `;
 

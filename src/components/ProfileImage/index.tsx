@@ -1,7 +1,17 @@
 import { FC } from 'react'
 
 import Canvas from './Canvas';
-import { Frame1, Frame2, Frame3, Inner, Name, NameWrapper, PictureBox, Wrapper, SeperatorLine } from './styles'
+import {
+  Frame1,
+  Frame2,
+  Frame3,
+  Inner,
+  Name,
+  NameWrapper,
+  PictureBox,
+  Wrapper,
+  SeperatorLine
+} from './styles'
 
 const ProfileImage: FC = () => {
 

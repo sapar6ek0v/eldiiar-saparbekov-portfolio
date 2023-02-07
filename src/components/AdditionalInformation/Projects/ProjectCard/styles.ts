@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+
+import { colors } from '../../../../constants/colors';
 import { TitleLine } from '../../styles';
 
 export const Wrapper = styled(motion.figure)`
@@ -15,7 +17,7 @@ export const Wrapper = styled(motion.figure)`
     top: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), 70%, rgba(0, 0, 0, 0));
+    background: linear-gradient(to top, colors.dark2, 70%, rgba(0, 0, 0, 0));
   }
 
   &:is(:hover, :focus) {
@@ -41,7 +43,7 @@ export const InfoTitle = styled.p`
   font-size: 20px;
   font-weight: 400;
   line-height: 16px;
-  color: #fff;
+  color: ${colors.white};
 `;
 
 export const InfoLine = styled(TitleLine)``;
@@ -69,11 +71,11 @@ export const Button = styled.button`
   z-index: 2;
   opacity: 0;
   font-size: 1.1rem;
-  color: #fff;
+  color: ${colors.white};
   height: 1.8rem;
   width: 1.8rem;
   padding: 6px;
-  border: 0.1rem solid #fff;
+  border: 0.1rem solid ${colors.white};
   border-radius: 100%;
   display: flex;
   justify-content: center;
@@ -82,7 +84,7 @@ export const Button = styled.button`
   transition: all 0.25s linear;
 
   &:is(:hover, :focus, :active) {
-    color: #fdc60c;
-    border-color: #fdc60c;
+    color: ${colors.yellow};
+    border-color: ${colors.yellow};
   }
 `;

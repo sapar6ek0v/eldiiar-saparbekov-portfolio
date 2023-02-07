@@ -6,8 +6,8 @@ export const variants = {
     y: 0,
     transition: {
       type: 'tween',
-      delay: custom * 0.1,
-      bounce: 0.1,
+      delay: custom * 0.3,
+      bounce: 0.3,
     },
   }),
   exit: { opacity: 0, x: -0, y: 20 },

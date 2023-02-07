@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { faGithub, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SocialIcon } from 'react-social-icons';
 
 import { colors } from '../../../constants/colors';
 import { HeaderButton, HeaderContainer, HeaderFixedContainer, HeaderGroup, HeaderItem, HeaderLink } from './styles';
 import Link from 'next/link';
+import { variants } from '../../../constants/animation-constants';
 
 const links = [
   {
@@ -50,14 +50,17 @@ const socialIcons = [
 
 const Header: FC = () => {
   return (
-    <HeaderFixedContainer>
+    <HeaderFixedContainer
+      initial='hidden'
+      animate='enter'
+      exit='exit'
+    >
       <HeaderContainer>
 
         <HeaderGroup
           gap={20}
-          initial={{ x: 500, scale: 0.5, opacity: 0 }}
-          animate={{ x: 0, scale: 1, opacity: 1 }}
-          transition={{ duration: 0.2 }}
+          variants={variants}
+          custom={1.3}
         >
           {
             links.map((link) =>
@@ -69,9 +72,8 @@ const Header: FC = () => {
 
         <HeaderGroup
           gap={13}
-          initial={{ x: -500, scale: 0.5, opacity: 0 }}
-          animate={{ x: 0, scale: 1, opacity: 1 }}
-          transition={{ duration: 0.2 }}
+          variants={variants}
+          custom={1.3}
         >
           {
             socialIcons.map((item) =>

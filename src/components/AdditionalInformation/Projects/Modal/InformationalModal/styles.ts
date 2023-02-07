@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { colors } from '../../../../../constants/colors';
 
 type WrapperProps = {
@@ -13,7 +14,7 @@ export const Wrapper = styled.div`
   bottom: 0;
   width: 61.8%;
   height: 100%;
-  background: #212121;
+  background-color: ${colors.darkBrown};
   display: flex;
   align-items: center;
   justify-content: center;
