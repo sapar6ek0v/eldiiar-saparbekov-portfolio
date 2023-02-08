@@ -15,7 +15,7 @@ export const lazyMinLoadTime = <T extends ComponentType<any>>(factory: () => Pro
 const Layout = lazy(() => {
   return Promise.all([
     import("../components/Layout"),
-    new Promise(resolve => setTimeout(resolve, 100))
+    new Promise(resolve => setTimeout(resolve, 600))
   ])
     .then(([moduleExports]) => moduleExports);
 });
@@ -23,7 +23,7 @@ const Layout = lazy(() => {
 const AdditionalInformation = lazy(() => {
   return Promise.all([
     import("../components/AdditionalInformation"),
-    new Promise(resolve => setTimeout(resolve, 100))
+    new Promise(resolve => setTimeout(resolve, 600))
   ])
     .then(([moduleExports]) => moduleExports);
 });
@@ -31,7 +31,7 @@ const AdditionalInformation = lazy(() => {
 const ProfileImage = lazy(() => {
   return Promise.all([
     import("../components/ProfileImage"),
-    new Promise(resolve => setTimeout(resolve, 100))
+    new Promise(resolve => setTimeout(resolve, 600))
   ])
     .then(([moduleExports]) => moduleExports);
 });
