@@ -1,7 +1,9 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
+
 import { colors } from '../../constants/colors';
 
-export const Wrapper = styled.section`
+export const Wrapper = styled(motion.section)`
   position: fixed;
   height: 100%;
   width: 50%;
@@ -18,7 +20,7 @@ export const Inner = styled.div`
   position: relative;
   width: 26vw;
   height: 32vw;
-  transform: rotateY(5deg);
+  transform: rotateY(11deg);
 `;
 
 export const NameWrapper = styled.div`
@@ -39,10 +41,7 @@ export const SeperatorLine = styled.div`
   margin-top: 0.4rem;
   width: 4rem;
   height: 0;
-  border-width: 0;
-  border-color: ${colors.white};
-  border-style: solid;
-  border-bottom-width: 0.1rem;
+  border-bottom: 0.1rem solid ${colors.white};
 `;
 
 export const PictureBox = styled.div`
@@ -71,15 +70,15 @@ export const Frame = styled.div`
 
 export const Frame1 = styled(Frame)`
   opacity: 0.25;
-  transform: translate(-0.7rem, 0.7rem);
+  transform: translate(-0.85rem, 0.85rem);
 `;
 
 export const Frame2 = styled(Frame)`
   opacity: 0.15;
-  transform: translate(-1.4rem, 1.4rem);
+  transform: translate(-1.65rem, 1.65rem);
 `;
 
 export const Frame3 = styled(Frame)`
   opacity: 0.05;
-  transform: translate(-2.2rem, 2.2rem);
+  transform: translate(-2.45rem, 2.45rem);
 `;

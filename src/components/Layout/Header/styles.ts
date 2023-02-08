@@ -76,7 +76,7 @@ export const HeaderButton = styled.button`
   cursor: pointer;
   transition: all 0.4s linear;
   padding: 2px 7px;
-  width: 37px;
+  width: 40px;
   height: 35px;
   color: ${colors.darkGray};
   font-size: 16px;
@@ -86,5 +86,9 @@ export const HeaderButton = styled.button`
     outline: none;
     border-color: ${colors.yellow};
     color: ${colors.yellow};
+  }
+
+  a {
+    font-size: 20px;
   }
 `;

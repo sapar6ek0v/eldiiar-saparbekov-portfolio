@@ -10,7 +10,7 @@ export const Container = styled(ComponentContainer)`
 `;
 
 export const TimeLine = styled.div`
-  border-left-color: 0.1rem solid ${colors.shadowGray};
+  border-left: 0.1rem solid ${colors.shadowGray};
   display: flex;
   flex-direction: column;
   gap: 2.6rem;

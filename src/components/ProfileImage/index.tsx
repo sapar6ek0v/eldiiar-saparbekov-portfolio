@@ -1,5 +1,6 @@
-import { FC, memo } from 'react'
+import { FC } from 'react'
 
+import { variants } from '../../constants/animation-constants';
 import Canvas from './Canvas';
 import {
   Frame1,
@@ -16,13 +17,19 @@ import {
 const ProfileImage: FC = () => {
 
   return (
-    <Wrapper>
+    <Wrapper
+      id='hero'
+      initial='hidden'
+      animate='enter'
+      exit='exit'
+      variants={variants} custom={1.3}
+    >
       <Inner>
         <NameWrapper>
           <Name>Eldiiar Saparbekov</Name>
           <SeperatorLine />
         </NameWrapper>
-        <PictureBox >
+        <PictureBox>
           <Canvas />
         </PictureBox>
         <Frame1 />
@@ -33,5 +40,5 @@ const ProfileImage: FC = () => {
   )
 }
 
-export default memo(ProfileImage)
+export default ProfileImage;
 

@@ -9,5 +9,5 @@ export const Container = styled.div`
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: calc(100vh - 68px);
+  min-height: calc(100vh - 75px);
 `;

@@ -1,11 +1,17 @@
+import Link from 'next/link';
 import { FC } from 'react';
 import { faGithub, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { colors } from '../../../constants/colors';
-import { HeaderButton, HeaderContainer, HeaderFixedContainer, HeaderGroup, HeaderItem, HeaderLink } from './styles';
-import Link from 'next/link';
 import { variants } from '../../../constants/animation-constants';
+import {
+  HeaderButton,
+  HeaderContainer,
+  HeaderFixedContainer,
+  HeaderGroup,
+  HeaderItem,
+  HeaderLink
+} from './styles';
 
 const links = [
   {
