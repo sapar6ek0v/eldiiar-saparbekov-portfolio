@@ -22,6 +22,7 @@ const Experience: FC = () => {
       whileInView='enter'
       exit='exit'
       viewport={{ amount: 0.3 }}
+      data-scroll-section
     >
       <Container>
         <Stack>

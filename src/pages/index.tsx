@@ -1,42 +1,24 @@
 import Head from 'next/head';
-import { ComponentType, lazy, Suspense } from 'react';
+import { lazy, Suspense, useState, useEffect } from 'react';
 
 import Loader from '../components/Loader';
 
-export const lazyMinLoadTime = <T extends ComponentType<any>>(factory: () => Promise<{ default: T }>, minLoadTimeMs = 100) =>
-  lazy(() =>
-    Promise.all([factory(), new Promise((resolve) => setTimeout(resolve, minLoadTimeMs))]).then(([moduleExports]) => moduleExports)
-  );
-
-// const Layout = lazyMinLoadTime(() => import('../components/Layout'), 100);
-// const ProfileImage = lazyMinLoadTime(() => import('../components/ProfileImage'), 100);
-// const AdditionalInformation = lazyMinLoadTime(() => import('../components/AdditionalInformation'), 100);
-
-const Layout = lazy(() => {
-  return Promise.all([
-    import("../components/Layout"),
-    new Promise(resolve => setTimeout(resolve, 600))
-  ])
-    .then(([moduleExports]) => moduleExports);
-});
-
-const AdditionalInformation = lazy(() => {
-  return Promise.all([
-    import("../components/AdditionalInformation"),
-    new Promise(resolve => setTimeout(resolve, 600))
-  ])
-    .then(([moduleExports]) => moduleExports);
-});
-
-const ProfileImage = lazy(() => {
-  return Promise.all([
-    import("../components/ProfileImage"),
-    new Promise(resolve => setTimeout(resolve, 600))
-  ])
-    .then(([moduleExports]) => moduleExports);
-});
+const Layout = lazy(() => import('../components/Layout'));
+const ProfileImage = lazy(() => import('../components/ProfileImage'));
+const AdditionalInformation = lazy(() => import('../components/AdditionalInformation'));
 
 export default function Home() {
+  const [preloader, setPreload] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setPreload(false)
+    }, 1000);
+
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [])
 
   return (
     <>
@@ -47,10 +29,14 @@ export default function Home() {
       </Head>
 
       <Suspense fallback={<Loader />} >
-        <Layout>
-          <ProfileImage />
-          <AdditionalInformation />
-        </Layout>
+        {
+          preloader ?
+            <Loader isShow={preloader} /> :
+            <Layout>
+              <ProfileImage />
+              <AdditionalInformation />
+            </Layout>
+        }
       </Suspense>
     </>
   );

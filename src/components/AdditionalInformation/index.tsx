@@ -1,5 +1,6 @@
-import { FC } from 'react'
+import { FC, useRef } from 'react'
 
+import useScroll from '../../helpers/hooks/useScroll';
 import Hero from './Hero'
 import AboutMe from './AboutMe'
 import Experience from './Experience'
@@ -9,9 +10,13 @@ import Projects from './Projects'
 import { Container, Wrapper } from './styles'
 
 const AdditionalInformation: FC = () => {
+  const containerRef = useRef<HTMLDivElement | null>(null)
+
+  useScroll(containerRef);
+
   return (
     <Wrapper>
-      <Container>
+      <Container ref={containerRef} data-scroll-container>
         <Hero />
         <AboutMe />
         <Experience />
@@ -24,3 +29,6 @@ const AdditionalInformation: FC = () => {
 }
 
 export default AdditionalInformation
+
+
+

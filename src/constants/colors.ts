@@ -2,6 +2,7 @@ export const colors = {
   yellow: '#fdc60c',
   darkGray: '#7c7c7c',
   shadowGray: 'rgba(255, 255, 255, 0.2)',
+  shadowGray2: 'rgba(255, 255, 255, 0.6)',
   white: '#fff',
   brownShadow: '#4c4242',
   darkBrown: '#212121',

@@ -1,12 +1,46 @@
+import { AnimatePresence, useIsPresent } from 'framer-motion'
 import { FC } from 'react'
-import { Line, Title, Wrapper } from './styles'
+import { Centered, Line, Title, UnMountLoader, Wrapper } from './styles'
 
-const Loader: FC = () => {
+type Props = {
+  isShow?: boolean;
+}
+
+const Loader: FC<Props> = ({ isShow }) => {
+  const isPresent = useIsPresent();
+
   return (
-    <Wrapper>
-      <Title>Eldiiar Saparbekov</Title>
-      <Line />
-    </Wrapper>
+    <>
+      <Wrapper>
+        <Centered>
+          <Title
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            transition={{ type: 'spring', delay: 0.4 }}
+          >
+            Eldiiar Saparbekov
+          </Title>
+          <Line
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ type: 'spring', delay: 0.4 }}
+          />
+        </Centered>
+      </Wrapper>
+
+      <AnimatePresence>
+        {isShow ?
+          <UnMountLoader
+            initial={{ y: 100 }}
+            animate={{ y: 0, transition: { duration: 0.6, ease: 'circOut' } }}
+            exit={{ y: -100, transition: { duration: 0.6, ease: 'circIn' } }}
+            style={{ originX: isPresent ? 0 : 1 }}
+          />
+          : null}
+      </AnimatePresence>
+    </>
   )
 }
 

@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 import { variants } from '../../../constants/animation-constants'
 import { ExtraSmallTitle, Stack, Line, ComponentContainer } from '../styles'
+import InformScrollBar from './InformScrollBar'
 import { Button, ButtonGroup, Group, Title, Wrapper } from './styles'
 
 const Hero: FC = () => {
@@ -11,6 +12,7 @@ const Hero: FC = () => {
       initial='hidden'
       whileInView='enter'
       exit='exit'
+      data-scroll-section
     >
       <ComponentContainer>
         <Stack>
@@ -30,6 +32,8 @@ const Hero: FC = () => {
           <Line variants={variants} custom={1.6} />
         </Stack>
       </ComponentContainer>
+
+      <InformScrollBar />
     </Wrapper>
   )
 }

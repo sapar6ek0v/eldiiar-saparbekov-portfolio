@@ -44,7 +44,6 @@ export const Button = styled.button`
   letter-spacing: 1.2px;
   color: ${colors.white};
   padding: 5px 8px;
-
   background-color: ${colors.dark3};
   border: none;
   border-radius: 0 0 0 0% / 0% 0% 0% 0%;
@@ -56,5 +55,6 @@ export const Button = styled.button`
     border-radius: 0 0 50% 50% / 0% 0% 5% 5%;
     box-shadow: 10px 10px ${colors.darkShadowHover};
     background-color: ${colors.yellow};
+    color: ${colors.dark3};
   }
 `;

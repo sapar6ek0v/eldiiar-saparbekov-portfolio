@@ -45,6 +45,7 @@ const Skills: FC = () => {
       whileInView='enter'
       exit='exit'
       viewport={{ amount: 0.3 }}
+      data-scroll-section
     >
       <ComponentContainer>
         <Stack>

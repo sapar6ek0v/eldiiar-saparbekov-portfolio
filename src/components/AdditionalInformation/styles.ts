@@ -5,10 +5,23 @@ import { colors } from '../../constants/colors';
 export const Wrapper = styled.section`
   grid-column-start: 2;
   grid-column-end: 2;
+  /* position: fixed; */
+  /* top: 0; */
+  /* left: 0; */
+  /* height: 100%; */
+  /* width: 100%; */
+  /* overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  height: 100%;
+  width: 50%;
+  top: 60px;
+  right: 5px; */
 `;
 
 export const Container = styled.div`
   width: 82%;
+  /* pointer-events: none; */
 `;
 
 export const ExtraSmallTitle = styled(motion.p)`
