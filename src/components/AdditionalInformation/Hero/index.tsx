@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
 import { variants } from '../../../constants/animation-constants'
+import { handleDownloadPDF } from '../../../helpers/functions/handleDownloadPDF'
 import { ExtraSmallTitle, Stack, Line, ComponentContainer } from '../styles'
 import InformScrollBar from './InformScrollBar'
 import { Button, ButtonGroup, Group, Title, Wrapper } from './styles'
@@ -25,7 +26,11 @@ const Hero: FC = () => {
             </Title>
             <ButtonGroup variants={variants} custom={1.5}>
               <Button type='button'>Hello</Button>
-              <Button type='button'>Resume</Button>
+              <a href='/cv.pdf' download>
+                <Button type='button'>
+                  Resume
+                </Button>
+              </a>
             </ButtonGroup>
           </Group>
 

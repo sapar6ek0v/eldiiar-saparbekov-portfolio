@@ -49,7 +49,7 @@ export const Line = styled(motion.div)`
   animation-timing-function: cubic-bezier(0.4, 0.1, 0.2, 1);
 `;
 
-export const UnMountLoader = styled.div`
+export const UnMountLoader = styled(motion.div)`
   height: 100vh;
   width: 100vw;
   background-color: ${colors.dark};
