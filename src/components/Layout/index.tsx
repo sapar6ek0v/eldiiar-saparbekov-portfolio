@@ -1,5 +1,8 @@
 import { FC, ReactNode } from 'react';
+import { ThemeProvider } from 'styled-components';
 
+import theme from '../../styles/theme';
+import GlobalStyles from '../../styles/GlobalStyles';
 import Header from './Header';
 import { LayoutWrapper, Container } from './styles';
 
@@ -9,12 +12,15 @@ type Props = {
 
 const Layout: FC<Props> = ({ children }) => {
   return (
-    <LayoutWrapper >
-      <Header />
-      <Container>
-        {children}
-      </Container>
-    </LayoutWrapper>
+    <ThemeProvider theme={theme}>
+      <LayoutWrapper>
+        <GlobalStyles />
+        <Header />
+        <Container>
+          {children}
+        </Container>
+      </LayoutWrapper>
+    </ThemeProvider>
   );
 };
 

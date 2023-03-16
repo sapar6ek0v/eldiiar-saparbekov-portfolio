@@ -4,6 +4,7 @@ import { faGithub, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-i
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { variants } from '../../../constants/animation-constants';
+import { LinkBtn } from '../../styles';
 import {
   HeaderButton,
   HeaderContainer,
@@ -64,19 +65,6 @@ const Header: FC = () => {
       <HeaderContainer>
 
         <HeaderGroup
-          gap={20}
-          variants={variants}
-          custom={1.3}
-        >
-          {
-            links.map((link) =>
-              <HeaderItem key={link.id}>
-                <HeaderLink href={link.path}>{link.title}</HeaderLink>
-              </HeaderItem>)
-          }
-        </HeaderGroup>
-
-        <HeaderGroup
           gap={13}
           variants={variants}
           custom={1.3}
@@ -87,6 +75,25 @@ const Header: FC = () => {
                 <Link href={item.link} target='_blank'><FontAwesomeIcon icon={item.icon} /></Link>
               </HeaderButton>)
           }
+        </HeaderGroup>
+
+        <HeaderGroup
+          gap={20}
+          variants={variants}
+          custom={1.3}
+        >
+          {
+            links.map((link) =>
+              <HeaderItem key={link.id}>
+                <HeaderLink href={link.path}>{link.title}</HeaderLink>
+              </HeaderItem>)
+          }
+          <LinkBtn
+            href='https://drive.google.com/file/d/1lbT2qqkZM_UYIXG6y6trQ_-vTHcrTu32/view?usp=share_link'
+            target='_blank'
+          >
+            Resume
+          </LinkBtn>
         </HeaderGroup>
 
       </HeaderContainer>
