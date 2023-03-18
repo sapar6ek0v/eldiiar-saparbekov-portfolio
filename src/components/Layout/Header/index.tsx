@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { FC } from 'react';
-import { faGithub, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FC, useId } from 'react';
+import { FaTelegram, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 import { variants } from '../../../constants/animation-constants';
+import { cvUrl } from '../../../constants/cvUrl';
 import { LinkBtn } from '../../styles';
 import {
   HeaderButton,
@@ -14,48 +14,50 @@ import {
   HeaderLink
 } from './styles';
 
-const links = [
-  {
-    id: '1',
-    path: '#about',
-    title: 'About',
-  },
-  {
-    id: '2',
-    path: '#experience',
-    title: 'Experience',
-  },
-  {
-    id: '3',
-    path: '#projects',
-    title: 'Projects',
-  },
-  {
-    id: '4',
-    path: '#contacts',
-    title: 'Contacts',
-  },
-];
-
-const socialIcons = [
-  {
-    id: '1',
-    icon: faGithub,
-    link: 'https://github.com/sapar6ek0v',
-  },
-  {
-    id: '2',
-    icon: faLinkedin,
-    link: 'https://www.linkedin.com/in/eldiiar-saparbekov/',
-  },
-  {
-    id: '3',
-    icon: faTelegram,
-    link: 'https://t.me/Eldiiar_Saparbekov',
-  }
-]
-
 const Header: FC = () => {
+  const data = {
+    links: [
+      {
+        id: useId(),
+        path: '#about',
+        title: 'About',
+      },
+      {
+        id: useId(),
+        path: '#experience',
+        title: 'Experience',
+      },
+      {
+        id: useId(),
+        path: '#projects',
+        title: 'Projects',
+      },
+      {
+        id: useId(),
+        path: '#contacts',
+        title: 'Contacts',
+      },
+    ],
+
+    socialIcons: [
+      {
+        id: useId(),
+        icon: <FaGithub />,
+        link: 'https://github.com/sapar6ek0v',
+      },
+      {
+        id: useId(),
+        icon: <FaLinkedin />,
+        link: 'https://www.linkedin.com/in/eldiiar-saparbekov/',
+      },
+      {
+        id: useId(),
+        icon: <FaTelegram />,
+        link: 'https://t.me/Eldiiar_Saparbekov',
+      }
+    ]
+  };
+
   return (
     <HeaderFixedContainer
       initial='hidden'
@@ -63,39 +65,36 @@ const Header: FC = () => {
       exit='exit'
     >
       <HeaderContainer>
-
         <HeaderGroup
           gap={13}
           variants={variants}
           custom={1.3}
         >
           {
-            socialIcons.map((item) =>
+            data.socialIcons.map((item) =>
               <HeaderButton key={item.id}>
-                <Link href={item.link} target='_blank'><FontAwesomeIcon icon={item.icon} /></Link>
+                <Link href={item.link} target='_blank'>{item.icon}</Link>
               </HeaderButton>)
           }
         </HeaderGroup>
-
         <HeaderGroup
           gap={20}
           variants={variants}
           custom={1.3}
         >
           {
-            links.map((link) =>
+            data.links.map((link) =>
               <HeaderItem key={link.id}>
                 <HeaderLink href={link.path}>{link.title}</HeaderLink>
               </HeaderItem>)
           }
           <LinkBtn
-            href='https://drive.google.com/file/d/1lbT2qqkZM_UYIXG6y6trQ_-vTHcrTu32/view?usp=share_link'
+            href={cvUrl}
             target='_blank'
           >
             Resume
           </LinkBtn>
         </HeaderGroup>
-
       </HeaderContainer>
     </HeaderFixedContainer>
   );

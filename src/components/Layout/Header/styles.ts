@@ -2,25 +2,19 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-import { colors } from '../../../constants/colors';
-
 export const HeaderFixedContainer = styled(motion.header)`
   top: 0;
   position: fixed;
   width: 100%;
   z-index: 4;
-  /* background: #181818; */
-  background-color: ${colors.darkBrown};
-  /* backdrop-filter: blur(10px); */
+  background-color: var(--dark-brown);
 `;
 
 export const HeaderContainer = styled.nav`
   max-width: 1140px;
   margin: 0 auto;
   padding: 20px 35px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  ${({ theme }) => theme.mixins.apart};
   gap: 20px;
 `;
 
@@ -42,8 +36,8 @@ export const HeaderItem = styled.li`
 
 export const HeaderLink = styled(Link)`
   font-weight: 400;
-  font-size: 16px;
-  color: ${colors.darkGray};
+  ${({ theme }) => theme.mixins.fontSize16};
+  color: var(--dark-gray);
   position: relative;
   transition: all 0.4s linear;
 
@@ -55,12 +49,12 @@ export const HeaderLink = styled(Link)`
     transform: translateY(-50%);
     position: absolute;
     bottom: -8px;
-    background-color: ${colors.yellow};
+    background-color: var(--yellow);
     transition: all 0.4s linear;
   }
 
   &:hover {
-    color: ${colors.yellow};
+    color: var(--yellow);
     &::before {
       opacity: 1;
       transform: translateY(0%);
@@ -69,23 +63,21 @@ export const HeaderLink = styled(Link)`
 `;
 
 export const HeaderButton = styled.button`
+  width: 40px;
+  height: 35px;
   background: none;
   border: 1px solid transparent;
   border-radius: 2px;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.4s linear;
   padding: 2px 7px;
-  width: 40px;
-  height: 35px;
-  color: ${colors.darkGray};
-  font-size: 16px;
-  text-decoration: none;
+  ${({ theme }) => theme.mixins.fCenter};
+  ${({ theme }) => theme.mixins.fontSize16};
+  color: var(--dark-gray);
+  transition: all 0.4s linear;
 
   &:is(:hover, :active, :focus) {
     outline: none;
-    border-color: ${colors.yellow};
-    color: ${colors.yellow};
+    border-color: var(--yellow);
+    color: var(--yellow);
   }
 
   a {

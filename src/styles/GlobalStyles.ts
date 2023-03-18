@@ -15,6 +15,10 @@ const GlobalStyles = createGlobalStyle`
   input[type=number] {
     -moz-appearance: textfield;
   }
+
+  button {
+    cursor: pointer;
+  }
 `;
 
 export default GlobalStyles;
