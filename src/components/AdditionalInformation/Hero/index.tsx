@@ -1,12 +1,14 @@
 import { FC } from 'react'
 
 import { variants } from '../../../constants/animation-constants'
-import { handleDownloadPDF } from '../../../helpers/functions/handleDownloadPDF'
+import { cvUrl } from '../../../constants/cvUrl'
+import { LinkBtn } from '../../styles'
 import { ExtraSmallTitle, Stack, Line, ComponentContainer } from '../styles'
 import InformScrollBar from './InformScrollBar'
-import { Button, ButtonGroup, Group, Title, Wrapper } from './styles'
+import { ButtonGroup, Group, Title, Wrapper } from './styles'
 
 const Hero: FC = () => {
+
   return (
     <Wrapper
       id='hero'
@@ -25,12 +27,13 @@ const Hero: FC = () => {
               <span>.</span>
             </Title>
             <ButtonGroup variants={variants} custom={1.5}>
-              <Button type='button'>Hello</Button>
-              <a href='/cv.pdf' download>
-                <Button type='button'>
-                  Resume
-                </Button>
-              </a>
+              <LinkBtn href='#contacts'>Let&apos;s Talk</LinkBtn>
+              <LinkBtn
+                href={cvUrl}
+                target='_blank'
+              >
+                Resume
+              </LinkBtn>
             </ButtonGroup>
           </Group>
 

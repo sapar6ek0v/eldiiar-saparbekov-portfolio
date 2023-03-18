@@ -33,7 +33,7 @@ const Experience: FC = () => {
           </TitleStack>
 
           <Description variants={variants} custom={1.6}>
-            Lorem ipsum dolor sit amet, consectetur. Adipiscing elit. Aenean et elementum purus.
+            This is my path as a developer until today.
           </Description>
         </Stack>
 

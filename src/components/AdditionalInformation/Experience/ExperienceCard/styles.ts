@@ -8,6 +8,8 @@ export const TimeLineCard = styled(motion.div)`
   text-align: start;
   padding: 2rem 2.2rem;
   margin-left: 1.5rem;
+  max-height: 225px;
+  overflow: hidden;
 
   &::before,
   &::after {
@@ -38,15 +40,28 @@ export const TimeLineCard = styled(motion.div)`
 export const TimeLineGroup = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
 `;
 
-export const TimeLineSubtitle = styled.p`
+export const TimeLineCompanyLink = styled.a`
+  display: inline-block;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0;
+  font-weight: 600;
+  color: #4a3abdab;
+  text-align: center;
+`;
+
+export const TimeLineDate = styled.p`
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0;
   font-weight: 600;
   color: ${colors.white};
+  text-align: center;
 `;
 
 export const TimeLineTitle = styled.h6`
@@ -57,3 +72,31 @@ export const TimeLineTitle = styled.h6`
   color: ${colors.white};
   margin: 10px 0 8px;
 `;
+
+export const HideDivGroup = styled.div``;
+
+export const TimeLineStack = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 30px;
+  overflow: hidden;
+  height: 80px;
+`;
+
+export const ResponsibilityTitle = styled.li`
+  font-size: 18px;
+  line-height: 1.2em;
+  letter-spacing: -0.005em;
+  font-weight: 300;
+  color: ${colors.darkGray};
+  position: relative;
+
+  &::before {
+    content: '●';
+    position: absolute;
+    left: -30px;
+  }
+`;
+
+export const HideDiv = styled.div``;

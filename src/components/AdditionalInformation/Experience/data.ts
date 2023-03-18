@@ -5,7 +5,7 @@ export const experiences = [
     id: '1',
     title: 'Junior Frontend Developer',
     company: '@Boomerang Delivery',
-    workingDates: 'August - October 2022',
+    workingDates: 'August 2022 - January 2023',
     companySiteUrl: 'https://boomerang.kg/',
     responsibilities: [
       {
