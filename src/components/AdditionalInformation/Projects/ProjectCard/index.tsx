@@ -1,36 +1,36 @@
-import { FC, useState, memo } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { FC } from 'react'
+import { FaArrowRight } from 'react-icons/fa'
 
 import { variants } from '../../../../constants/animation-constants'
-import Modal from '../Modal'
-import { Project } from '../data'
+import { useModalContext } from '../../../../context/modalContext'
+import { Project } from '../../../../helpers/types'
 import { Button, DisplayImage, Info, InfoLine, InfoTitle, Wrapper } from './styles'
 
 type Props = {
-  project: Project
+  project: Project;
   index: number;
 }
 
 const ProjectCard: FC<Props> = ({ project, index }) => {
-  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+  const { setProject, toggleModal } = useModalContext();
 
-  const handleOpenModal = () => setIsOpenModal(true);
-  const handleCloseModal = () => setIsOpenModal(false);
+  const handleOpenModal = () => {
+    setProject(project);
+    toggleModal();
+  }
 
   return (
     <Wrapper variants={variants} custom={`1.${6 + index}`}>
       <Button onClick={handleOpenModal}>
-        <FontAwesomeIcon icon={faArrowRight} />
+        <FaArrowRight />
       </Button>
       <Info>
         <InfoTitle>{project.name}</InfoTitle>
         <InfoLine />
       </Info>
       <DisplayImage imgUrl={project.imageUrl} />
-      <Modal isOpen={isOpenModal} onClose={handleCloseModal} project={project} />
     </Wrapper>
   )
 }
 
-export default memo(ProjectCard)
+export default ProjectCard;

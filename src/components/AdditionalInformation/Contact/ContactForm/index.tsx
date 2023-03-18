@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 import { variants } from '../../../../constants/animation-constants'
 import { Form, Input, Textarea, FormFooter, Button, CircleIcon, InformTitle } from './styles'
@@ -19,7 +18,7 @@ const ContactForm: FC = () => {
       <FormFooter variants={variants} custom={1.6}>
         <Button>
           <span>Send</span>
-          <CircleIcon icon={faArrowRight} />
+          <CircleIcon />
         </Button>
 
         <InformTitle>* Marked fields are required to fill.</InformTitle>

@@ -3,6 +3,9 @@ import { css } from 'styled-components';
 const variables = css`
   :root {
     --yellow: #fdc60c;
+    --orange: #fdcb6e;
+    --light-pink: #ff7675;
+    --pink: #e84393;
     --shadow-gray: rgba(255, 255, 255, 0.2);
     --shadow-gray2: rgba(255, 255, 255, 0.6);
     --white: #fff;
@@ -15,6 +18,7 @@ const variables = css`
     --dark4: #111111;
     --dark5: #080808;
     --dark6: rgba(22, 22, 22, 0.95);
+    --dark7: #000;
     --dark-shadow: rgba(0, 0, 0, 0.15);
     --light-dark-gray: rgba(0, 0, 0, 0);
     --dark-shadow-hover: rgba(0, 0, 0, 0.25);

@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-import { colors } from '../../../../constants/colors';
 import { TitleLine } from '../../styles';
 
 export const Wrapper = styled(motion.figure)`
@@ -17,7 +16,7 @@ export const Wrapper = styled(motion.figure)`
     top: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, colors.dark2, 70%, rgba(0, 0, 0, 0));
+    background: linear-gradient(to top, var(--dark2), 70%, var(--light-dark-gray));
   }
 
   &:is(:hover, :focus) {
@@ -34,16 +33,14 @@ export const Info = styled.figcaption`
   bottom: 1.4rem;
   z-index: 2;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  ${({ theme }) => theme.mixins.column};
   gap: 0.5rem;
 `;
 
 export const InfoTitle = styled.p`
-  font-size: 20px;
+  ${({ theme }) => theme.mixins.fontSize20};
   font-weight: 400;
-  line-height: 16px;
-  color: ${colors.white};
+  color: var(--white);
 `;
 
 export const InfoLine = styled(TitleLine)``;
@@ -65,26 +62,26 @@ export const DisplayImage = styled.div`
 `;
 
 export const Button = styled.button`
+  height: 1.8rem;
+  width: 1.8rem;
   position: absolute;
   right: 2.3rem;
   bottom: 1.5rem;
   z-index: 2;
   opacity: 0;
-  font-size: 1.1rem;
-  color: ${colors.white};
-  height: 1.8rem;
-  width: 1.8rem;
   padding: 6px;
-  border: 0.1rem solid ${colors.white};
+
+  ${({ theme }) => theme.mixins.fontSize16};
+  color: var(--white);
+
+  border: 0.1rem solid var(--white);
   border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${({ theme }) => theme.mixins.fCenter};
   transform: scale(0);
   transition: all 0.25s linear;
 
   &:is(:hover, :focus, :active) {
-    color: ${colors.yellow};
-    border-color: ${colors.yellow};
+    color: var(--yellow);
+    border-color: var(--yellow);
   }
 `;

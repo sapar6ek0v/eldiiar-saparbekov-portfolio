@@ -18,6 +18,11 @@ const mixins = {
     align-items: center;
   `,
 
+  center: css`
+    display: flex;
+    align-items: center;
+  `,
+
   fontSize16: css`
     font-size: 16px;
     line-height: 20px;
