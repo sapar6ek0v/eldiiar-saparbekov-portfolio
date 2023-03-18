@@ -25,7 +25,7 @@ export default function Home() {
       <Head>
         <title>Eldiiar Saparbekov</title>
         <meta name='description' content='Eldiiar Saparbekov personal website' />
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/logo.png' />
       </Head>
 
       <Suspense fallback={<Loader />} >
