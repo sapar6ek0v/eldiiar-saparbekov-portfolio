@@ -32,7 +32,7 @@ const ExperienceCard: FC<Props> = ({ experience, index }) => {
           isEqualOrHigher79 ? <>
             <TimeLineStack>
               {
-                experience.responsibilities.map((item) => (
+                experience.responsibilities.map((item: any) => (
                   <ResponsibilityTitle key={item.id}>{item.responsibility}</ResponsibilityTitle>
                 ))
               }
@@ -40,7 +40,7 @@ const ExperienceCard: FC<Props> = ({ experience, index }) => {
           </> :
             <TimeLineStack>
               {
-                experience.responsibilities.map((item) => (
+                experience.responsibilities.map((item: any) => (
                   <ResponsibilityTitle key={item.id}>{item.responsibility}</ResponsibilityTitle>
                 ))
               }
