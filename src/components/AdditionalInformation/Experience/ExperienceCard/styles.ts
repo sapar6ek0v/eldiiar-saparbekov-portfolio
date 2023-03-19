@@ -1,15 +1,13 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { colors } from '../../../../constants/colors';
 
 export const TimeLineCard = styled(motion.div)`
-  background: ${colors.dark};
   position: relative;
+  max-height: 225px;
   text-align: start;
   padding: 2rem 2.2rem;
   margin-left: 1.5rem;
-  max-height: 225px;
-  overflow: hidden;
+  background-color: var(--dark);
 
   &::before,
   &::after {
@@ -33,34 +31,33 @@ export const TimeLineCard = styled(motion.div)`
     transform: translate(-50%, -50%);
     height: 21px;
     width: 2px;
-    background-color: ${colors.white};
+    background-color: var(--white);
   }
 `;
 
 export const TimeLineGroup = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  ${({ theme }) => theme.mixins.apart};
   gap: 1rem;
 `;
 
 export const TimeLineCompanyLink = styled.a`
   display: inline-block;
-  cursor: pointer;
-  font-size: 14px;
-  line-height: 16px;
+  ${({ theme }) => theme.mixins.fontSize14};
   letter-spacing: 0;
   font-weight: 600;
-  color: #4a3abdab;
-  text-align: center;
+  color: var(--purple);
+  transition: var(--transition);
+
+  &:is(:hover, :focus) {
+    text-decoration: underline;
+  }
 `;
 
 export const TimeLineDate = styled.p`
-  font-size: 14px;
-  line-height: 16px;
+  ${({ theme }) => theme.mixins.fontSize14};
   letter-spacing: 0;
   font-weight: 600;
-  color: ${colors.white};
+  color: var(--white);
   text-align: center;
 `;
 
@@ -69,15 +66,14 @@ export const TimeLineTitle = styled.h6`
   line-height: 1.4em;
   letter-spacing: -0.005em;
   font-weight: 300;
-  color: ${colors.white};
+  color: var(--white);
   margin: 10px 0 8px;
 `;
 
 export const HideDivGroup = styled.div``;
 
 export const TimeLineStack = styled.ul`
-  display: flex;
-  flex-direction: column;
+  ${({ theme }) => theme.mixins.column};
   gap: 10px;
   padding-left: 30px;
   overflow: hidden;
@@ -89,7 +85,7 @@ export const ResponsibilityTitle = styled.li`
   line-height: 1.2em;
   letter-spacing: -0.005em;
   font-weight: 300;
-  color: ${colors.darkGray};
+  color: var(--dark-gray);
   position: relative;
 
   &::before {

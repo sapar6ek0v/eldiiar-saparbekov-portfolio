@@ -4,11 +4,11 @@ import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
 
 import { variants } from '../../constants/animation-constants';
 import { useModalContext } from '../../context/modalContext';
-import Slider from './Slider';
 import InformationalModal from './InformationalModal';
+import Slider from './Slider';
 import { ContentWrapper, Wrapper, XButton, InfoButton, SliderButton } from './styles'
 
-const Modal: FC = () => {
+const ProjectDetailsModal: FC = () => {
   const [slideIndex, setSlideIndex] = useState<number>(0);
   const [isInformModalOpen, setIsInformModalOpen] = useState<boolean>(false);
 
@@ -44,13 +44,13 @@ const Modal: FC = () => {
         </InfoButton>
 
         {(slideIndex !== 0 && !isInformModalOpen) &&
-          <SliderButton onClick={prevSlide} type='button' left variants={variants} custom={1.3}>
+          <SliderButton onClick={prevSlide} type='button' $left variants={variants} custom={1.3}>
             <FaArrowLeft />
           </SliderButton>}
 
         <Slider project={project} slideIndex={slideIndex} />
 
-        {(slideIndex !== project?.images.length && !isInformModalOpen) &&
+        {((slideIndex + 1) !== project?.images.length && !isInformModalOpen) &&
           <SliderButton onClick={nextSlide} type='button' variants={variants} custom={1.3}>
             <FaArrowRight />
           </SliderButton>}
@@ -66,4 +66,4 @@ const Modal: FC = () => {
   )
 }
 
-export default Modal;
+export default ProjectDetailsModal;

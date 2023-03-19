@@ -11,10 +11,12 @@ import {
   TitleStack
 } from '../styles'
 import ExperienceCard from './ExperienceCard'
+import useExperiencesData from './hooks/useExperiencesData'
 import { Container, TimeLine } from './styles'
-import { experiences } from './data'
 
 const Experience: FC = () => {
+  const { experiences } = useExperiencesData();
+
   return (
     <ComponentWrapper
       id='experience'
@@ -37,12 +39,10 @@ const Experience: FC = () => {
           </Description>
         </Stack>
 
-        <TimeLine>
-          {
-            experiences.map((experience, index) => (
-              <ExperienceCard key={experience.id} experience={experience} index={index + 1} />
-            ))
-          }
+        <TimeLine variants={variants} custom={1.6}>
+          {experiences.map((experience, index) => (
+            <ExperienceCard key={experience.id} experience={experience} index={index + 1} />
+          ))}
         </TimeLine>
 
       </Container>

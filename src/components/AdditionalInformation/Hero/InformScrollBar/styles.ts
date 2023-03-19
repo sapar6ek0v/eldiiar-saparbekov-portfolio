@@ -1,27 +1,24 @@
 import { motion } from 'framer-motion';
 import styled, { keyframes } from 'styled-components';
 
-import { colors } from '../../../../constants/colors';
-
 export const Wrapper = styled(motion.div)`
-  position: fixed;
-  right: -12rem;
+  position: absolute;
+  right: -5rem;
   bottom: 2.5rem;
   z-index: 3;
   opacity: 1;
-  display: flex;
-  flex-direction: column;
+  ${({ theme }) => theme.mixins.column};
   align-items: center;
   gap: 1rem;
   pointer-events: none;
-  transition: 0.4s ease;
+  transition: var(--transition);
 `;
 
 export const ScrollTitle = styled.p`
   font-size: 0.5rem;
   font-weight: 700;
   letter-spacing: 0.14em;
-  color: ${colors.white};
+  color: var(--white);
   transform: rotate(90deg);
 `;
 
@@ -43,7 +40,7 @@ const loader = keyframes`
 export const ScrollBar = styled.div`
   width: 0.1rem;
   height: 2rem;
-  background-color: ${colors.shadowGray};
+  background-color: var(--shadow-gray);
   position: relative;
   overflow: hidden;
 
@@ -52,7 +49,7 @@ export const ScrollBar = styled.div`
     width: 0.1rem;
     height: 2rem;
     position: absolute;
-    background-color: ${colors.white};
+    background-color: var(--white);
     animation-name: ${loader};
     animation-duration: 2s;
     animation-iteration-count: infinite;

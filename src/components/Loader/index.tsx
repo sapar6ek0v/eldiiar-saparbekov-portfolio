@@ -1,4 +1,4 @@
-import { AnimatePresence, useIsPresent } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import { FC } from 'react'
 import { Centered, Line, Title, UnMountLoader, Wrapper } from './styles'
 
@@ -7,8 +7,6 @@ type Props = {
 }
 
 const Loader: FC<Props> = ({ isShow }) => {
-  const isPresent = useIsPresent();
-
   return (
     <AnimatePresence>
       {!isShow ?

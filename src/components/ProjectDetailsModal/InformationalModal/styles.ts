@@ -23,19 +23,32 @@ export const Wrapper = styled.div`
 export const InfoContainer = styled.div`
   padding: 4rem 6rem;
   ${({ theme }) => theme.mixins.column};
-  gap: 1rem;
+  gap: 1.6rem;
 `;
 
 export const InfoTitle = styled.h3`
-  color: var(--white);
   font-size: 1.3rem;
   line-height: 1.1em;
+  font-weight: 400;
+  color: var(--white);
 `;
 
 export const InfoDescription = styled.p`
   font-size: 1rem;
   line-height: 1.3em;
-  color: var(--dark-gray);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white);
+
+  &::before {
+    content: '❝';
+    margin-right: 5px;
+  }
+
+  &::after {
+    content: '❞';
+    margin-left: 5px;
+  }
 `;
 
 export const StacksGroup = styled.div`
@@ -54,8 +67,32 @@ export const Stack = styled.p`
   color: var(--dark-gray);
   ${({ theme }) => theme.mixins.fCenter};
   padding: 0 1.3rem;
-  border: 1px solid var(--shadow-gray);
   border-radius: 20px;
+  background-color: var(--dark);
+`;
+
+export const FeaturesGroup = styled.ul`
+  ${({ theme }) => theme.mixins.column};
+  gap: 0.5rem;
+  padding-left: 35px;
+`;
+
+export const Feature = styled.li`
+  position: relative;
+
+  p {
+    ${({ theme }) => theme.mixins.fontSize16};
+    color: var(--dark-gray);
+    font-weight: 300;
+  }
+
+  &::before {
+    content: '▸';
+    position: absolute;
+    top: 0;
+    left: -25px;
+    color: var(--orange);
+  }
 `;
 
 export const ButtonGroup = styled.div`

@@ -23,6 +23,16 @@ const mixins = {
     align-items: center;
   `,
 
+  fontSize12: css`
+    font-size: 12px;
+    line-height: 16px;
+  `,
+
+  fontSize14: css`
+    font-size: 14px;
+    line-height: 18px;
+  `,
+
   fontSize16: css`
     font-size: 16px;
     line-height: 20px;
@@ -30,12 +40,12 @@ const mixins = {
 
   fontSize18: css`
     font-size: 18px;
-    line-height: 24px;
+    line-height: 22px;
   `,
 
   fontSize20: css`
     font-size: 20px;
-    line-height: 16px;
+    line-height: 24px;
   `,
 };
 

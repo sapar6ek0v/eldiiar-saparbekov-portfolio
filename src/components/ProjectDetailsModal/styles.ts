@@ -71,7 +71,7 @@ export const InfoButton = styled(BaseButton)`
 `;
 
 type SliderButtonProps = {
-  left?: boolean;
+  $left?: boolean;
 };
 
 export const SliderButton = styled(motion.button)`
@@ -82,8 +82,8 @@ export const SliderButton = styled(motion.button)`
   border: none;
   position: fixed;
   top: 50%;
-  left: ${(props: SliderButtonProps) => props.left && '4.5rem'};
-  right: ${(props: SliderButtonProps) => !props.left && '4.5rem'};
+  left: ${(props: SliderButtonProps) => props.$left && '4.5rem'};
+  right: ${(props: SliderButtonProps) => !props.$left && '4.5rem'};
   color: var(--dark-gray);
   transition: all 0.2s ease;
 

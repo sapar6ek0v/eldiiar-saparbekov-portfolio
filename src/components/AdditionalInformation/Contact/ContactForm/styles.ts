@@ -17,7 +17,7 @@ export const Input = styled(motion.input)`
   border-bottom: 1px solid var(--white);
   border-radius: 0;
   background: transparent;
-  transition: all 0.4s linear;
+  transition: var(--transition);
 
   &:is(:hover, :focus, :active, :focus-within) {
     border-bottom: 1px solid var(--yellow);
@@ -35,7 +35,7 @@ export const Textarea = styled(motion.textarea)`
   border-bottom: 1px solid var(--white);
   border-radius: 0;
   background: transparent;
-  transition: all 0.4s linear;
+  transition: var(--transition);
 
   &:is(:hover, :focus, :active, :focus-within) {
     border-bottom: 1px solid var(--yellow);
@@ -55,11 +55,10 @@ export const Button = styled.button`
   border: none;
   ${({ theme }) => theme.mixins.center};
   gap: 0.8rem;
-  cursor: pointer;
   color: var(--white);
   ${({ theme }) => theme.mixins.fontSize18};
   letter-spacing: -0.005em;
-  transition: all 0.4s linear;
+  transition: var(--transition);
 
   &:is(:hover, :active, :focus) {
     color: var(--yellow);
@@ -77,7 +76,7 @@ export const CircleIcon = styled(FaArrowRight)`
   padding: 4px 5px;
   border-radius: 50%;
   border: 1px solid var(--white);
-  transition: all 0.4s linear;
+  transition: var(--transition);
 `;
 
 export const InformTitle = styled.p`

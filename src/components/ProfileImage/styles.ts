@@ -1,17 +1,13 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-import { colors } from '../../constants/colors';
-
 export const Wrapper = styled(motion.section)`
   position: fixed;
   height: 100%;
   width: 50%;
   top: 0;
   left: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${({ theme }) => theme.mixins.fCenter};
   z-index: 2;
   perspective: 38rem;
 `;
@@ -31,9 +27,9 @@ export const NameWrapper = styled.div`
 `;
 
 export const Name = styled.p`
-  font-size: 12px;
+  ${({ theme }) => theme.mixins.fontSize12};
   font-weight: 300;
-  color: ${colors.white};
+  color: var(--white);
   letter-spacing: 0.02em;
 `;
 
@@ -41,7 +37,7 @@ export const SeperatorLine = styled.div`
   margin-top: 0.4rem;
   width: 4rem;
   height: 0;
-  border-bottom: 0.1rem solid ${colors.white};
+  border-bottom: 0.1rem solid var(--white);
 `;
 
 export const PictureBox = styled.div`
@@ -65,7 +61,7 @@ export const Frame = styled.div`
   top: 0;
   left: 0;
   z-index: -2;
-  border: 1px solid ${colors.white};
+  border: 1px solid var(--white);
 `;
 
 export const Frame1 = styled(Frame)`

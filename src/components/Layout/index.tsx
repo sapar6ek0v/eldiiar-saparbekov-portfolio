@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import ModalProvider from '../../context/modalContext';
 import theme from '../../styles/theme';
 import GlobalStyles from '../../styles/GlobalStyles';
-import Modal from '../Modal';
+import ProjectDetailsModal from '../ProjectDetailsModal';
 import Header from './Header';
 import { LayoutWrapper, Container } from './styles';
 
@@ -22,7 +22,7 @@ const Layout: FC<Props> = ({ children }) => {
           <Container>
             {children}
           </Container>
-          <Modal />
+          <ProjectDetailsModal />
         </LayoutWrapper>
       </ModalProvider>
     </ThemeProvider>

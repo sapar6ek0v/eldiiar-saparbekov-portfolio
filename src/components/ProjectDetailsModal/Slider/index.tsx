@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { Project } from '../../../helpers/types';
 
+import { Project } from '../../../helpers/types';
 import { Image, ImageWrapper, Wrapper } from './styles'
 
 type Props = {
@@ -23,7 +23,7 @@ const Slider: FC<Props> = ({ project, slideIndex }) => {
     },
     exit: { opacity: 0, x: -20, y: 0 },
   }
-  // TODO:
+
   return (
     <Wrapper
       initial='hidden'
@@ -33,7 +33,7 @@ const Slider: FC<Props> = ({ project, slideIndex }) => {
       {
         !!project ?
           <ImageWrapper variants={variants}>
-            <Image src={project.images[slideIndex]} alt='photo' />
+            <Image src={project.images[slideIndex].imageUrl} alt='photo' />
           </ImageWrapper>
           : null
       }

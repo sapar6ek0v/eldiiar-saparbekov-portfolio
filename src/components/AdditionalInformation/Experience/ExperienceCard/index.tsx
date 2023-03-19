@@ -1,7 +1,16 @@
-import { FC, memo, useRef } from 'react'
+import { FC, useRef } from 'react'
 
 import { variants } from '../../../../constants/animation-constants'
-import { HideDiv, TimeLineCard, TimeLineGroup, TimeLineCompanyLink, TimeLineDate, TimeLineTitle, TimeLineStack, ResponsibilityTitle } from './styles'
+import {
+  HideDiv,
+  TimeLineCard,
+  TimeLineGroup,
+  TimeLineCompanyLink,
+  TimeLineDate,
+  TimeLineTitle,
+  TimeLineStack,
+  ResponsibilityTitle
+} from './styles'
 
 type Props = {
   experience: any
@@ -51,4 +60,4 @@ const ExperienceCard: FC<Props> = ({ experience, index }) => {
   )
 }
 
-export default memo(ExperienceCard)
+export default ExperienceCard;

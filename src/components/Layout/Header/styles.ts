@@ -39,7 +39,7 @@ export const HeaderLink = styled(Link)`
   ${({ theme }) => theme.mixins.fontSize16};
   color: var(--dark-gray);
   position: relative;
-  transition: all 0.4s linear;
+  transition: var(--transition);
 
   &::before {
     content: '';
@@ -50,7 +50,7 @@ export const HeaderLink = styled(Link)`
     position: absolute;
     bottom: -8px;
     background-color: var(--yellow);
-    transition: all 0.4s linear;
+    transition: var(--transition);
   }
 
   &:hover {
@@ -72,7 +72,7 @@ export const HeaderButton = styled.button`
   ${({ theme }) => theme.mixins.fCenter};
   ${({ theme }) => theme.mixins.fontSize16};
   color: var(--dark-gray);
-  transition: all 0.4s linear;
+  transition: var(--transition);
 
   &:is(:hover, :active, :focus) {
     outline: none;

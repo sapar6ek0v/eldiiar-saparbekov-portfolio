@@ -6,6 +6,7 @@ const variables = css`
     --orange: #fdcb6e;
     --light-pink: #ff7675;
     --pink: #e84393;
+    --purple: #4a3abdab;
     --shadow-gray: rgba(255, 255, 255, 0.2);
     --shadow-gray2: rgba(255, 255, 255, 0.6);
     --white: #fff;
@@ -22,6 +23,8 @@ const variables = css`
     --dark-shadow: rgba(0, 0, 0, 0.15);
     --light-dark-gray: rgba(0, 0, 0, 0);
     --dark-shadow-hover: rgba(0, 0, 0, 0.25);
+
+    --transition: all 0.4s linear;
   }
 `;
 

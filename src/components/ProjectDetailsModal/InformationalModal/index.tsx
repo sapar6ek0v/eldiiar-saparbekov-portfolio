@@ -4,12 +4,14 @@ import { Project } from '../../../helpers/types';
 import {
   ButtonGroup,
   Button,
-  Wrapper,
   InfoContainer,
   InfoTitle,
   InfoDescription,
+  FeaturesGroup,
   StacksGroup,
   Stack,
+  Wrapper,
+  Feature,
 } from './styles'
 
 type Props = {
@@ -37,6 +39,13 @@ const InformationalModal: FC<Props> = ({ isOpen, onClose, project, isParentModal
             {project.stacks.map((stack) => <Stack key={stack.id}>{stack.name}</Stack>)}
           </StacksGroup>
           <InfoDescription>{project.description}</InfoDescription>
+          <FeaturesGroup>
+            {project.features.map((feature) => (
+              <Feature key={feature.id}>
+                <p>{feature.title}</p>
+              </Feature>
+            ))}
+          </FeaturesGroup>
           <ButtonGroup>
             <Button type='button'>
               <a href={project.demoUrl} target='_blank' rel="noreferrer">View</a>
