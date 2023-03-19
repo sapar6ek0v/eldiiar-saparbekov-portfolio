@@ -33,7 +33,7 @@ const Slider: FC<Props> = ({ project, slideIndex }) => {
       {
         !!project ?
           <ImageWrapper variants={variants}>
-            <Image src={project.images[slideIndex].imageUrl} alt='photo' />
+            <Image src={project.images[slideIndex]?.imageUrl} alt='photo' />
           </ImageWrapper>
           : null
       }
