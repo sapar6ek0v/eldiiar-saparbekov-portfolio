@@ -1,7 +1,9 @@
 import { useId } from 'react';
 
+import { Experience } from '../../../../helpers/types';
+
 export default function useExperiencesData() {
-  const experiences = [
+  const experiences: Experience[] = [
     {
       id: useId(),
       title: 'Junior Frontend Developer',

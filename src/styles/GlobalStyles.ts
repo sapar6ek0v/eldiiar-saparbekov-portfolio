@@ -17,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
     background-color: var(--dark-brown) !important;
     overscroll-behavior-y: none;
     user-select: none;
+    scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

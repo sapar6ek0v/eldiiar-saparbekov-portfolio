@@ -24,3 +24,17 @@ export type Feature = {
   id: string;
   title: string;
 };
+
+export type Experience = {
+  id: string;
+  title: string;
+  company: string;
+  workingDates: string;
+  companySiteUrl: string;
+  responsibilities: Responsibility[];
+};
+
+export type Responsibility = {
+  id: string;
+  responsibility: string;
+};

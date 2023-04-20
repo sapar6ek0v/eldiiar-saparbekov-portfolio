@@ -21,6 +21,7 @@ const variables = css`
     --dark6: rgba(22, 22, 22, 0.95);
     --dark7: #000;
     --dark-shadow: rgba(0, 0, 0, 0.15);
+    --dark-shadow2: rgba(0, 0, 0, 0.7);
     --light-dark-gray: rgba(0, 0, 0, 0);
     --dark-shadow-hover: rgba(0, 0, 0, 0.25);
 

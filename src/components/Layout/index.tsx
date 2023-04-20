@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { MantineProvider } from '@mantine/core';
 
 import ModalProvider from '../../context/modalContext';
 import theme from '../../styles/theme';
@@ -15,16 +16,18 @@ type Props = {
 const Layout: FC<Props> = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
-      <ModalProvider>
-        <LayoutWrapper>
-          <GlobalStyles />
-          <Header />
-          <Container>
-            {children}
-          </Container>
-          <ProjectDetailsModal />
-        </LayoutWrapper>
-      </ModalProvider>
+      <MantineProvider withGlobalStyles withNormalizeCSS >
+        <ModalProvider>
+          <LayoutWrapper>
+            <GlobalStyles />
+            <Header />
+            <Container>
+              {children}
+            </Container>
+            <ProjectDetailsModal />
+          </LayoutWrapper>
+        </ModalProvider>
+      </MantineProvider>
     </ThemeProvider>
   );
 };

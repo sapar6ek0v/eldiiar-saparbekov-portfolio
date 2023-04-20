@@ -70,7 +70,9 @@ export const TimeLineTitle = styled.h6`
   margin: 10px 0 8px;
 `;
 
-export const HideDivGroup = styled.div``;
+export const HideDivGroup = styled.div`
+  position: relative;
+`;
 
 export const TimeLineStack = styled.ul`
   ${({ theme }) => theme.mixins.column};
@@ -95,4 +97,27 @@ export const ResponsibilityTitle = styled.li`
   }
 `;
 
-export const HideDiv = styled.div``;
+export const HideDiv = styled.div`
+  height: 100%;
+  position: absolute;
+  inset: 0px;
+  background: linear-gradient(transparent 24%, transparent 74%, var(--dark-shadow2) 110%);
+`;
+
+export const ExpandMoreButton = styled.button`
+  position: absolute;
+  right: 0;
+  bottom: -26px;
+  ${({ theme }) => theme.mixins.center};
+  gap: 4px;
+  padding: 2px 4px;
+  ${({ theme }) => theme.mixins.fontSize12};
+  font-weight: 400;
+  color: var(--purple);
+  border: 1px solid transparent;
+  transition: var(--transition);
+
+  &:is(:hover, :active, :focus, :focus-within) {
+    border-color: var(--purple);
+  }
+`;

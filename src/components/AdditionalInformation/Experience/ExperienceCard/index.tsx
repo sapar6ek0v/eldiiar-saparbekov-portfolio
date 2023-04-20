@@ -1,6 +1,9 @@
-import { FC, useRef } from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
+import { IoIosArrowForward } from 'react-icons/io';
 
 import { variants } from '../../../../constants/animation-constants'
+import { Experience } from '../../../../helpers/types';
+import AdditionalInfoModal from '../AdditionalInfoModal';
 import {
   HideDiv,
   TimeLineCard,
@@ -9,54 +12,73 @@ import {
   TimeLineDate,
   TimeLineTitle,
   TimeLineStack,
-  ResponsibilityTitle
+  ResponsibilityTitle,
+  HideDivGroup,
+  ExpandMoreButton
 } from './styles'
 
 type Props = {
-  experience: any
-  index: number
+  experience: Experience;
+  index: number;
 }
 
 const ExperienceCard: FC<Props> = ({ experience, index }) => {
   const divHideRef = useRef<HTMLDivElement | null>(null);
-  console.log((divHideRef.current?.clientHeight as number) <= 79 && 'frf')
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isHidden, setIsHidden] = useState<boolean>(false);
 
-  const isEqualOrHigher79 = (divHideRef.current?.clientHeight as number) <= 79;
+  useEffect(() => {
+    if (parseInt(window.getComputedStyle(divHideRef.current as Element).height) < 79) {
+      setIsHidden(true);
+    }
+  }, []);
+
+  const toggleModal = () => setIsOpen(!isOpen);
 
   return (
-    <TimeLineCard variants={variants} custom={`1.${6 + index}`}>
-      <TimeLineGroup>
-        <TimeLineCompanyLink
-          href={experience.companySiteUrl}
-          target='_blank'
-        >{experience.company}
-        </TimeLineCompanyLink>
-        <TimeLineDate>{experience.workingDates}</TimeLineDate>
-      </TimeLineGroup>
-      <TimeLineTitle>{experience.title}</TimeLineTitle>
+    <>
+      <TimeLineCard variants={variants} custom={`1.${6 + index}`}>
+        <TimeLineGroup>
+          <TimeLineCompanyLink
+            href={experience.companySiteUrl}
+            target='_blank'
+          >
+            {experience.company}
+          </TimeLineCompanyLink>
+          <TimeLineDate>{experience.workingDates}</TimeLineDate>
+        </TimeLineGroup>
+        <TimeLineTitle>{experience.title}</TimeLineTitle>
 
-      <div>
-        <HideDiv ref={divHideRef} />
-        {
-          isEqualOrHigher79 ? <>
-            <TimeLineStack>
-              {
-                experience.responsibilities.map((item: any) => (
-                  <ResponsibilityTitle key={item.id}>{item.responsibility}</ResponsibilityTitle>
-                ))
-              }
-            </TimeLineStack> <button>...</button>
-          </> :
-            <TimeLineStack>
-              {
-                experience.responsibilities.map((item: any) => (
-                  <ResponsibilityTitle key={item.id}>{item.responsibility}</ResponsibilityTitle>
-                ))
-              }
-            </TimeLineStack>
-        }
-      </div>
-    </TimeLineCard>
+        <HideDivGroup>
+          <HideDiv ref={divHideRef} />
+          {
+            !isHidden ? <>
+              <TimeLineStack>
+                {
+                  experience.responsibilities.map((item: any) => (
+                    <ResponsibilityTitle key={item.id}>
+                      {item.responsibility}
+                    </ResponsibilityTitle>
+                  ))
+                }
+              </TimeLineStack>
+              <ExpandMoreButton onClick={toggleModal} type='button'>
+                <span>More</span>
+                <IoIosArrowForward />
+              </ExpandMoreButton>
+            </> :
+              <TimeLineStack>
+                {
+                  experience.responsibilities.map((item: any) => (
+                    <ResponsibilityTitle key={item.id}>{item.responsibility}</ResponsibilityTitle>
+                  ))
+                }
+              </TimeLineStack>
+          }
+        </HideDivGroup>
+      </TimeLineCard>
+      <AdditionalInfoModal experience={experience} isOpen={isOpen} onClose={toggleModal} />
+    </>
   )
 }
 
