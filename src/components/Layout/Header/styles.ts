@@ -43,10 +43,10 @@ export const HeaderLink = styled(Link)`
 
   &::before {
     content: '';
-    height: 2px;
+    height: 0;
     width: 100%;
     opacity: 0;
-    transform: translateY(-50%);
+    transform: translateY(50%);
     position: absolute;
     bottom: -8px;
     background-color: var(--yellow);
@@ -57,6 +57,7 @@ export const HeaderLink = styled(Link)`
     color: var(--yellow);
     &::before {
       opacity: 1;
+      height: 2px;
       transform: translateY(0%);
     }
   }

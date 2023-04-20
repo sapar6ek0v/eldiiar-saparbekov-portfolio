@@ -1,9 +1,18 @@
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 type WrapperProps = {
   opened: boolean;
 };
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -20,6 +29,8 @@ export const Wrapper = styled.div`
   height: ${(props: WrapperProps) => (props.opened ? '100vh' : '0')};
   opacity: ${(props: WrapperProps) => (props.opened ? '1' : 0)};
   transition: opacity 0.4s ease;
+  animation: fadeIn 0.8s;
+  animation-fill-mode: forwards;
 `;
 
 export const ContentWrapper = styled.div`
