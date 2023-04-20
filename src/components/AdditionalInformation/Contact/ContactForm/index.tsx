@@ -1,8 +1,17 @@
-import { FC, FormEvent, useState } from 'react'
+import { FC, useState } from 'react'
 import { useForm } from '@mantine/form'
 
 import { variants } from '../../../../constants/animation-constants'
-import { Form, Input, Textarea, FormFooter, Button, CircleIcon, InformTitle } from './styles'
+import {
+  Form,
+  Input,
+  Textarea,
+  FormFooter,
+  Button,
+  CircleIcon,
+  InformTitle,
+  CircleLoader,
+} from './styles'
 
 interface FormValues {
   name: string;
@@ -21,13 +30,16 @@ const ContactForm: FC = () => {
     },
     validate: {
       email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Please, enter correct email'),
+      name: (value) => (value.length < 2 ? 'Please, enter your name' : null),
+      message: (value) => (value.length < 2 ? 'Please, write a message' : null),
     }
   });
 
   const handleSubmit = async (values: FormValues) => {
     setIsLoading(true);
     try {
-      const response = await fetch('https://gmail-sender.onrender.com/api/sent-mail', {
+      const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL
+      const response = await fetch(`${SERVER_URL}/api/sent-mail`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -36,13 +48,17 @@ const ContactForm: FC = () => {
         body: JSON.stringify(values),
       });
       const content = await response.json();
-      setIsLoading(false);
+      console.log({ content });
+      form.reset();
+      setIsLoading(false)
 
     } catch (error) {
       console.log({ error });
+    } finally {
+      setIsLoading(false);
     }
   };
-
+  console.log(form.errors)
   return (
     <Form
       initial='hidden'
@@ -75,7 +91,7 @@ const ContactForm: FC = () => {
       <FormFooter variants={variants} custom={1.5}>
         <Button disabled={isLoading}>
           <span>Send</span>
-          <CircleIcon />
+          {isLoading ? <CircleLoader /> : <CircleIcon />}
         </Button>
 
         <InformTitle>* Marked fields are required to fill.</InformTitle>

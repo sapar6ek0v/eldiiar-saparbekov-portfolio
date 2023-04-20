@@ -1,6 +1,6 @@
-import { FaArrowRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { FaArrowRight } from 'react-icons/fa';
 
 export const Form = styled(motion.form)`
   ${({ theme }) => theme.mixins.column};
@@ -89,4 +89,24 @@ export const InformTitle = styled.p`
   line-height: 1.48em;
   letter-spacing: 0;
   font-weight: 400;
+`;
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const CircleLoader = styled.div`
+  width: 25px;
+  height: 25px;
+  border: 3px solid var(--yellow);
+  border-radius: 50%;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  transition: all 0.5s ease-in;
+  animation: ${rotate} 1s infinite linear;
 `;

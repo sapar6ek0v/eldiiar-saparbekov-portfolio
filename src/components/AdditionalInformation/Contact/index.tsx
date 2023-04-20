@@ -1,8 +1,6 @@
 import { FC } from 'react'
 
 import { variants } from '../../../constants/animation-constants'
-import ContactForm from './ContactForm'
-import { Container } from './styles'
 import {
   ComponentWrapper,
   Description,
@@ -12,6 +10,8 @@ import {
   TitleLine,
   TitleStack
 } from '../styles'
+import ContactForm from './ContactForm'
+import { Container } from './styles'
 
 const Contacts: FC = () => {
   return (

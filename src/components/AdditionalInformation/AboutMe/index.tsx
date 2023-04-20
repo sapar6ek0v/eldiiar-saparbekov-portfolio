@@ -12,7 +12,6 @@ import {
   ComponentWrapper,
   ComponentContainer
 } from '../styles'
-// import { Highlight } from './styles'
 
 const AboutMe: FC = () => {
   return (
