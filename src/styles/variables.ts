@@ -25,6 +25,7 @@ const variables = css`
     --light-dark-gray: rgba(0, 0, 0, 0);
     --dark-shadow-hover: rgba(0, 0, 0, 0.25);
 
+    --font-family: 'Montserrat', sans-serif;
     --transition: all 0.4s linear;
   }
 `;

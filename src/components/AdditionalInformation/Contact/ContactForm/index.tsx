@@ -2,6 +2,7 @@ import { FC, useState } from 'react'
 import { useForm } from '@mantine/form'
 
 import { variants } from '../../../../constants/animation-constants'
+import { successNotification } from '../../../../helpers/succesNotification'
 import {
   Form,
   Input,
@@ -49,8 +50,9 @@ const ContactForm: FC = () => {
       });
       const content = await response.json();
       console.log({ content });
+      successNotification(content?.message);
       form.reset();
-      setIsLoading(false)
+      setIsLoading(false);
 
     } catch (error) {
       console.log({ error });

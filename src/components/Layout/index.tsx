@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { MantineProvider } from '@mantine/core';
+import { Notifications } from '@mantine/notifications';
 
 import ModalProvider from '../../context/modalContext';
 import theme from '../../styles/theme';
@@ -20,6 +21,7 @@ const Layout: FC<Props> = ({ children }) => {
         <ModalProvider>
           <LayoutWrapper>
             <GlobalStyles />
+            <Notifications position="top-right" />
             <Header />
             <Container>
               {children}
