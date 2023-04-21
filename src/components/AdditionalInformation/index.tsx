@@ -12,7 +12,7 @@ import { Container, Wrapper } from './styles'
 const AdditionalInformation: FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null)
 
-  // useScroll(containerRef);
+  useScroll(containerRef);
 
   return (
     <Wrapper>

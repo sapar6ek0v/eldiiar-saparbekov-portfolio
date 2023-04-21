@@ -4,6 +4,12 @@ import styled from 'styled-components';
 export const Wrapper = styled.section`
   grid-column-start: 2;
   grid-column-end: 2;
+  /* skew scroll */
+  /* width: 50%; */
+  /* height: 100%; */
+  /* position: fixed; */
+  /* right: 0; */
+  /* overflow: hidden; */
 `;
 
 export const Container = styled.div`
@@ -58,7 +64,8 @@ export const Description = styled(motion.p)`
 `;
 
 export const ComponentWrapper = styled(motion.section)`
-  padding-bottom: 107.6px;
+  padding-top: 77px;
+  padding-bottom: 30.6px;
 `;
 
 export const ComponentContainer = styled.div`

@@ -3,7 +3,7 @@ import 'locomotive-scroll/src/locomotive-scroll.scss';
 
 export default function useScroll(ref: MutableRefObject<HTMLDivElement | null>) {
   useEffect(() => {
-    const container = ref.current;
+    const container = ref?.current;
     if (!container) return;
 
     let scroll: LocomotiveScroll;
