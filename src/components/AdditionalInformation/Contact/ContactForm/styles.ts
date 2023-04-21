@@ -1,47 +1,40 @@
 import { motion } from 'framer-motion';
 import styled, { keyframes } from 'styled-components';
 import { FaArrowRight } from 'react-icons/fa';
+import { createStyles } from '@mantine/core';
 
 export const Form = styled(motion.form)`
   ${({ theme }) => theme.mixins.column};
-  gap: 1.8rem;
+  gap: 2rem;
 `;
 
-export const Input = styled(motion.input)`
-  width: 100%;
-  display: block;
-  color: var(--white);
-  ${({ theme }) => theme.mixins.fontSize18};
-  letter-spacing: -0.005em;
-  padding: 0 0 1.2rem;
-  border-bottom: 1px solid var(--white);
-  border-radius: 0;
-  background: transparent;
-  transition: var(--transition);
+export const InputBox = styled(motion.div)``;
 
-  &:is(:hover, :focus, :active, :focus-within) {
-    border-bottom: 1px solid var(--yellow);
-    outline: none;
-  }
-`;
+export const useInputStyles = createStyles(() => ({
+  input: {
+    width: '100%',
+    display: ' block',
+    color: 'var(--white)',
+    fontSize: 18,
+    lineHeight: '22px',
+    letterSpacing: '-0.005em',
+    padding: '0 0 1.2rem',
+    border: 'none',
+    borderBottom: '1px solid var(--white)',
+    borderRadius: 0,
+    background: 'transparent',
+    transition: 'var(--transition)',
 
-export const Textarea = styled(motion.textarea)`
-  width: 100%;
-  display: block;
-  color: var(--white);
-  ${({ theme }) => theme.mixins.fontSize18};
-  letter-spacing: -0.005em;
-  padding: 0 0 1.2rem;
-  border-bottom: 1px solid var(--white);
-  border-radius: 0;
-  background: transparent;
-  transition: var(--transition);
+    '&:hover, &:focus, &:active, &:focus-within': {
+      borderBottom: '1px solid var(--yellow)',
+      outline: 'none',
+    },
+  },
 
-  &:is(:hover, :focus, :active, :focus-within) {
-    border-bottom: 1px solid var(--yellow);
-    outline: none;
-  }
-`;
+  error: {
+    fontSize: 15,
+  },
+}));
 
 export const FormFooter = styled(motion.div)`
   ${({ theme }) => theme.mixins.apart};

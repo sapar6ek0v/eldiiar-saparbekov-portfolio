@@ -6,6 +6,9 @@ const variables = css`
     --orange: #fdcb6e;
     --light-pink: #ff7675;
     --pink: #e84393;
+    --red: #fa5252;
+    --red2: #fe0707;
+    --hover-red: #b63737;
     --purple: #4a3abdab;
     --shadow-gray: rgba(255, 255, 255, 0.2);
     --shadow-gray2: rgba(255, 255, 255, 0.6);
