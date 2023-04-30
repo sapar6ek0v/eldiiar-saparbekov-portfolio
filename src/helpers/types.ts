@@ -38,3 +38,9 @@ export type Responsibility = {
   id: string;
   responsibility: string;
 };
+
+export type NavLink = {
+  id: string;
+  path: string;
+  title: string;
+};
