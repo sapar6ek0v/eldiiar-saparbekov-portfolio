@@ -1,11 +1,13 @@
 import Link from 'next/link';
-import { FC, useId } from 'react';
+import { FC, useId, useState } from 'react';
 import { FaTelegram, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 import { variants } from '../../../constants/animation-constants';
 import { cvUrl } from '../../../constants/cvUrl';
+import useMediaQuery from '../../../helpers/hooks/useMediaQuery';
 import { LinkBtn } from '../../styles';
 import {
+  BurgerMenuButton,
   HeaderButton,
   HeaderContainer,
   HeaderFixedContainer,
@@ -15,6 +17,10 @@ import {
 } from './styles';
 
 const Header: FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const matches = useMediaQuery('(min-width: 768px)')
+
   const data = {
     links: [
       {
@@ -58,6 +64,8 @@ const Header: FC = () => {
     ]
   };
 
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
     <HeaderFixedContainer
       initial='hidden'
@@ -77,24 +85,31 @@ const Header: FC = () => {
               </HeaderButton>)
           }
         </HeaderGroup>
-        <HeaderGroup
-          gap={20}
-          variants={variants}
-          custom={1.3}
-        >
-          {
-            data.links.map((link) =>
-              <HeaderItem key={link.id}>
-                <HeaderLink href={link.path}>{link.title}</HeaderLink>
-              </HeaderItem>)
-          }
-          <LinkBtn
-            href={cvUrl}
-            target='_blank'
+        {matches ?
+          <HeaderGroup
+            gap={20}
+            variants={variants}
+            custom={1.3}
           >
-            Resume
-          </LinkBtn>
-        </HeaderGroup>
+            {
+              data.links.map((link) =>
+                <HeaderItem key={link.id}>
+                  <HeaderLink href={link.path}>
+                    <span className="inner-span">
+                      <span className="default">{link.title}</span>
+                      <span className="active">{link.title}</span>
+                    </span>
+                  </HeaderLink>
+                </HeaderItem>)
+            }
+            <LinkBtn
+              href={cvUrl}
+              target='_blank'
+            >
+              Resume
+            </LinkBtn>
+          </HeaderGroup> :
+          <BurgerMenuButton onClick={toggle} $isOpen={isOpen}/>}
       </HeaderContainer>
     </HeaderFixedContainer>
   );

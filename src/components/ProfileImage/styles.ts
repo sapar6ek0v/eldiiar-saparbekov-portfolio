@@ -4,19 +4,31 @@ import styled from 'styled-components';
 export const Wrapper = styled(motion.section)`
   position: fixed;
   height: 100%;
-  width: 50%;
+  /* width: 50%; */
   top: 0;
-  left: 20px;
+  /* left: 20px; */
   ${({ theme }) => theme.mixins.fCenter};
-  z-index: 2;
+  /* z-index: 2; */
   perspective: 38rem;
+
+  @media ${({ theme }) => theme.bp.bpTinyS} {
+    width: 100%;
+    right: 0;
+    left: 0;
+    z-index: 0;
+  }
 `;
 
-export const Inner = styled.div`
+export const Inner = styled(motion.div)`
   position: relative;
   width: 26vw;
   height: 32vw;
-  transform: rotateY(11deg);
+  /* transform: rotateY(11deg); */
+
+  @media ${({ theme }) => theme.bp.bpTinyS} {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const NameWrapper = styled.div`
@@ -31,6 +43,10 @@ export const Name = styled.p`
   font-weight: 300;
   color: var(--white);
   letter-spacing: 0.02em;
+
+  @media ${({ theme }) => theme.bp.bpTinyS} {
+    font-size: 18px;
+  }
 `;
 
 export const SeperatorLine = styled.div`
@@ -38,6 +54,10 @@ export const SeperatorLine = styled.div`
   width: 4rem;
   height: 0;
   border-bottom: 0.1rem solid var(--white);
+
+  @media ${({ theme }) => theme.bp.bpTinyS} {
+    width: 2.5rem;
+  }
 `;
 
 export const PictureBox = styled.div`
@@ -49,8 +69,8 @@ export const PictureBox = styled.div`
   top: 0;
 
   canvas {
-    width: 354px;
-    height: 448px;
+    /* width: 354px;
+    height: 448px; */
   }
 `;
 

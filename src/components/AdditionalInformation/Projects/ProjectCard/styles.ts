@@ -29,8 +29,8 @@ export const Wrapper = styled(motion.figure)`
 
 export const Info = styled.figcaption`
   position: absolute;
-  left: 2.3rem;
-  bottom: 1.4rem;
+  left: clamp(1.75rem, calc(1.54rem + 1.04vw), 2.28rem);
+  bottom: clamp(1rem, calc(0.9rem + 0.49vw), 1.25rem);
   z-index: 2;
   overflow: hidden;
   ${({ theme }) => theme.mixins.column};
@@ -62,11 +62,11 @@ export const DisplayImage = styled.div`
 `;
 
 export const Button = styled.button`
-  height: 1.8rem;
-  width: 1.8rem;
+  height: clamp(1.63rem, calc(1.55rem + 0.37vw), 1.81rem);
+  width: clamp(1.63rem, calc(1.55rem + 0.37vw), 1.81rem);
   position: absolute;
-  right: 2.3rem;
-  bottom: 1.5rem;
+  right: clamp(1.75rem, calc(1.54rem + 1.04vw), 2.28rem);
+  bottom: clamp(1.13rem, calc(0.98rem + 0.73vw), 1.5rem);
   z-index: 2;
   opacity: 0;
   padding: 6px;

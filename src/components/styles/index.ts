@@ -3,8 +3,9 @@ import styled from 'styled-components';
 
 export const LinkBtn = styled(Link)`
   cursor: pointer;
+  font-size: var(--font-size-link-btn);
   font-weight: 500;
-  ${({ theme }) => theme.mixins.fontSize16};
+  line-height: 20px;
   letter-spacing: 1.2px;
   color: var(--white);
   padding: 5px 8px;

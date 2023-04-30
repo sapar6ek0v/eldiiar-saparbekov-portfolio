@@ -9,9 +9,9 @@ export const Wrapper = styled(motion.section)`
 
 export const Title = styled(motion.h1)`
   color: var(--white);
-  font-size: 55px;
+  font-size: var(--font-size-hero);
   font-weight: 500;
-  line-height: 1.2;
+  /* line-height: 1.2; */
 
   letter-spacing: 0.1em;
   -webkit-text-fill-color: transparent;

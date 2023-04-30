@@ -1,4 +1,4 @@
-import { Group, Modal } from "@mantine/core";
+import { Modal } from "@mantine/core";
 
 import { Experience } from "../../../../helpers/types";
 import {
@@ -6,6 +6,7 @@ import {
   ResponsibilitiesStack,
   ResponsibilityItem,
   Stack,
+  SubStack,
   Title,
   useModalStyles,
   WorkingDates
@@ -19,21 +20,6 @@ type Props = {
 
 const AdditionalInfoModal = ({ experience, isOpen, onClose }: Props) => {
   const { classes } = useModalStyles();
-
-  const variants = {
-    hidden: { opacity: 0, x: 20, y: 0 },
-    enter: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: {
-        type: 'tween',
-        delay: 0.2,
-        bounce: 0.4,
-      },
-    },
-    exit: { opacity: 0, x: -20, y: 0 },
-  }
 
   return (
     <Modal
@@ -51,12 +37,12 @@ const AdditionalInfoModal = ({ experience, isOpen, onClose }: Props) => {
     >
       <Stack>
         <Title>{experience.title}</Title>
-        <Group>
+        <SubStack>
           <CompanyLink href={experience.companySiteUrl} target='_blank'>
             {experience.company}
           </CompanyLink>
           <WorkingDates>{experience.workingDates}</WorkingDates>
-        </Group>
+        </SubStack>
         <ResponsibilitiesStack>
           {experience.responsibilities.map((item) => (
             <ResponsibilityItem key={item.id}>

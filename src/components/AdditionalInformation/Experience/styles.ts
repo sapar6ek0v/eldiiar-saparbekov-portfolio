@@ -11,5 +11,5 @@ export const Container = styled(ComponentContainer)`
 export const TimeLine = styled(motion.div)`
   border-left: 0.1rem solid var(--shadow-gray);
   ${({ theme }) => theme.mixins.column};
-  gap: 2.6rem;
+  gap: clamp(1.88rem, calc(1.68rem + 0.98vw), 2.38rem);
 `;

@@ -2,12 +2,14 @@ import { FC } from 'react'
 
 import { variants } from '../../../constants/animation-constants'
 import { cvUrl } from '../../../constants/cvUrl'
+import useMediaQuery from '../../../helpers/hooks/useMediaQuery'
 import { LinkBtn } from '../../styles'
 import { ExtraSmallTitle, Stack, Line, ComponentContainer } from '../styles'
 import InformScrollBar from './InformScrollBar'
 import { ButtonGroup, Group, Title, Wrapper } from './styles'
 
 const Hero: FC = () => {
+  const matches = useMediaQuery('(min-width: 768px)')
 
   return (
     <Wrapper
@@ -41,7 +43,7 @@ const Hero: FC = () => {
         </Stack>
       </ComponentContainer>
 
-      <InformScrollBar />
+      {matches ? <InformScrollBar /> : null}
     </Wrapper>
   )
 }

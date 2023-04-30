@@ -57,6 +57,7 @@ const ContactForm: FC = () => {
       setIsLoading(false);
 
     } catch (error: any) {
+      form.reset();
       errorNotification(error?.message);
     } finally {
       setIsLoading(false);

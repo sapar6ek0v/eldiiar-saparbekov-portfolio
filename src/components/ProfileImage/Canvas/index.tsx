@@ -1,9 +1,13 @@
 import { useRef, useEffect } from 'react';
 
+import useWindowDimensions from '../../../helpers/hooks/useWindowDimensions';
 import { base64Img } from '../data';
 
 const Canvas = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  const windowSize = useWindowDimensions();
+  console.log({ windowSize });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -14,8 +18,8 @@ const Canvas = () => {
       if (!canvas) return;
 
       const ctx = canvas.getContext('2d');
-      canvas.width = 354;
-      canvas.height = 448;
+      canvas.width = windowSize.width;
+      canvas.height = windowSize.height;
 
       if (!ctx) return;
 
@@ -139,7 +143,7 @@ const Canvas = () => {
 
       init();
     });
-  }, []);
+  }, [windowSize.height, windowSize.width]);
 
   return (
     <canvas

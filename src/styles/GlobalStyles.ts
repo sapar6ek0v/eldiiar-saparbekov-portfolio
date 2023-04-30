@@ -6,13 +6,14 @@ const GlobalStyles = createGlobalStyle`
   
   * {
     box-sizing: border-box;
+    /* cursor: none; */
   }
 
   html,
   body {
     padding: 0;
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Source Sans Pro',sans-serif;
     font-weight: 300;
     background-color: var(--dark-brown) !important;
     overscroll-behavior-y: none;

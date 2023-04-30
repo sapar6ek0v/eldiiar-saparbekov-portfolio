@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   top: 0;
   z-index: 600;
   bottom: 0;
-  width: 61.8%;
+  /* width: 61.8%; */
   height: 100%;
   background-color: var(--dark-brown);
   ${({ theme }) => theme.mixins.fCenter};
@@ -18,24 +18,27 @@ export const Wrapper = styled.div`
   transform: ${(props: WrapperProps) => (props.opened ? 'translateX(0)' : 'translateX(-100%)')};
   opacity: ${(props: WrapperProps) => (props.opened ? '1' : 0)};
   transition: all 0.4s ease;
+
+  @media ${({ theme }) => theme.bp.bpTinyS} {
+    width: 100%;
+  }
 `;
 
 export const InfoContainer = styled.div`
-  padding: 4rem 6rem;
+  padding: clamp(3.13rem, calc(2.78rem + 1.71vw), 4rem) clamp(2.19rem, calc(0.7rem + 7.44vw), 6rem);
   ${({ theme }) => theme.mixins.column};
-  gap: 1.6rem;
+  gap: var(--gap);
 `;
 
 export const InfoTitle = styled.h3`
-  font-size: 1.3rem;
+  ${({ theme }) => theme.mixins.fontSize22};
   line-height: 1.1em;
   font-weight: 400;
   color: var(--white);
 `;
 
 export const InfoDescription = styled.p`
-  font-size: 1rem;
-  line-height: 1.3em;
+  ${({ theme }) => theme.mixins.fontSize16};
   font-weight: 300;
   font-style: italic;
   color: var(--white);
@@ -56,17 +59,17 @@ export const StacksGroup = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: start;
-  gap: 10px;
+  gap: clamp(0.31rem, calc(0.19rem + 0.61vw), 0.63rem);
 `;
 
 export const Stack = styled.p`
-  height: 2rem;
+  height: clamp(1.63rem, calc(1.48rem + 0.73vw), 2rem);
   ${({ theme }) => theme.mixins.fontSize16};
   letter-spacing: -0.005em;
   font-weight: 300;
   color: var(--dark-gray);
   ${({ theme }) => theme.mixins.fCenter};
-  padding: 0 1.3rem;
+  padding: 0 clamp(1rem, calc(0.88rem + 0.61vw), 1.31rem);
   border-radius: 20px;
   background-color: var(--dark);
 `;
@@ -74,7 +77,7 @@ export const Stack = styled.p`
 export const FeaturesGroup = styled.ul`
   ${({ theme }) => theme.mixins.column};
   gap: 0.5rem;
-  padding-left: 35px;
+  padding-left: var(--pd-l);
 `;
 
 export const Feature = styled.li`
@@ -82,15 +85,15 @@ export const Feature = styled.li`
 
   p {
     ${({ theme }) => theme.mixins.fontSize16};
-    color: var(--dark-gray);
     font-weight: 300;
+    color: var(--dark-gray);
   }
 
   &::before {
     content: '▸';
     position: absolute;
-    top: 0;
-    left: -25px;
+    top: clamp(-0.19rem, calc(-0.26rem + 0.37vw), 0rem);
+    left: var(--left);
     color: var(--orange);
   }
 `;
@@ -101,7 +104,7 @@ export const ButtonGroup = styled.div`
 `;
 
 export const Button = styled.button`
-  width: 120px;
+  width: var(--button-width);
   height: 40px;
   min-height: 20px;
   ${({ theme }) => theme.mixins.fontSize18};
@@ -120,9 +123,7 @@ export const Button = styled.button`
 
   &::after {
     content: '';
-    top: 0;
-    left: 0;
-    width: 120px;
+    width: var(--button-width);
     height: 40px;
     background: linear-gradient(to right, var(--light-pink), var(--pink));
     opacity: 0;

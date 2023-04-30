@@ -5,8 +5,8 @@ export const TimeLineCard = styled(motion.div)`
   position: relative;
   max-height: 225px;
   text-align: start;
-  padding: 2rem 2.2rem;
-  margin-left: 1.5rem;
+  padding: clamp(1.25rem, calc(1.05rem + 0.98vw), 2rem) clamp(1.38rem, calc(0.98rem + 1.95vw), 2.2rem);
+  margin-left: clamp(1.19rem, calc(1.07rem + 0.61vw), 1.5rem);
   background-color: var(--dark);
 
   &::before,
@@ -27,11 +27,15 @@ export const TimeLineCard = styled(motion.div)`
   }
 
   &::after {
-    left: -1.5rem;
+    /* left: -1.5rem; */
     transform: translate(-50%, -50%);
     height: 21px;
     width: 2px;
     background-color: var(--white);
+
+    @media ${({ theme }) => theme.bp.bpTinyS} {
+      left: -1.3rem;
+    }
   }
 `;
 
@@ -42,7 +46,7 @@ export const TimeLineGroup = styled.div`
 
 export const TimeLineCompanyLink = styled.a`
   display: inline-block;
-  ${({ theme }) => theme.mixins.fontSize14};
+  ${({ theme }) => theme.mixins.fontSize16};
   letter-spacing: 0;
   font-weight: 600;
   color: var(--purple);
@@ -54,7 +58,7 @@ export const TimeLineCompanyLink = styled.a`
 `;
 
 export const TimeLineDate = styled.p`
-  ${({ theme }) => theme.mixins.fontSize14};
+  ${({ theme }) => theme.mixins.fontSize16};
   letter-spacing: 0;
   font-weight: 600;
   color: var(--white);
@@ -62,8 +66,7 @@ export const TimeLineDate = styled.p`
 `;
 
 export const TimeLineTitle = styled.h6`
-  font-size: 20px;
-  line-height: 1.4em;
+  ${({ theme }) => theme.mixins.fontSize20};
   letter-spacing: -0.005em;
   font-weight: 300;
   color: var(--white);
@@ -77,14 +80,13 @@ export const HideDivGroup = styled.div`
 export const TimeLineStack = styled.ul`
   ${({ theme }) => theme.mixins.column};
   gap: 10px;
-  padding-left: 30px;
+  padding-left: clamp(0.81rem, calc(0.4rem + 2.07vw), 1.88rem);
   overflow: hidden;
   height: 80px;
 `;
 
 export const ResponsibilityTitle = styled.li`
-  font-size: 18px;
-  line-height: 1.2em;
+  ${({ theme }) => theme.mixins.fontSize18};
   letter-spacing: -0.005em;
   font-weight: 300;
   color: var(--dark-gray);
@@ -93,7 +95,7 @@ export const ResponsibilityTitle = styled.li`
   &::before {
     content: '●';
     position: absolute;
-    left: -30px;
+    left: clamp(-1.87rem, calc(-0.4rem + -2.07vw), -0.81rem);
   }
 `;
 
@@ -107,10 +109,10 @@ export const HideDiv = styled.div`
 export const ExpandMoreButton = styled.button`
   position: absolute;
   right: 0;
-  bottom: -26px;
+  bottom: clamp(-1.62rem, calc(-1.07rem + -0.78vw), -1.22rem);
   ${({ theme }) => theme.mixins.center};
   gap: 4px;
-  padding: 2px 4px;
+  padding: clamp(0.06rem, calc(0.04rem + 0.12vw), 0.13rem) 4px;
   ${({ theme }) => theme.mixins.fontSize12};
   font-weight: 400;
   color: var(--purple);
