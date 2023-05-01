@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { FC, useId } from 'react';
+import { useTransform, useScroll } from 'framer-motion';
 import { FaTelegram, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 import { variants } from '../../../constants/animation-constants';
@@ -15,6 +16,12 @@ import {
 
 const Header: FC = () => {
   const matches = useMediaQuery('(min-width: 768px)')
+  const { scrollY } = useScroll()
+  const backgroundColor = useTransform(
+    scrollY,
+    [0, 400],
+    ["transparent", "#212121"],
+  );
 
   const socialIcons = [
     {
@@ -39,6 +46,7 @@ const Header: FC = () => {
       initial='hidden'
       animate='enter'
       exit='exit'
+      style={{ backgroundColor }}
     >
       <HeaderContainer>
         <HeaderGroup

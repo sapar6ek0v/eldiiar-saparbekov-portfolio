@@ -11,20 +11,21 @@ export const LinkItem = styled(Link)`
   font-weight: 400;
   ${({ theme }) => theme.mixins.fontSize16};
   color: var(--dark-gray);
-  display: block;
+  ${({ theme }) => theme.mixins.center};
+  gap: 8px;
   overflow: hidden;
   position: relative;
+
+  span, svg {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+      color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
 
   .inner-span {
     clip-path: inset(0);
     display: block;
     position: relative;
-  }
-
-  span {
-    display: inline-block;
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-      color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
   .default {
@@ -44,6 +45,10 @@ export const LinkItem = styled(Link)`
 
     .active {
       transform: translateY(0%);
+      color: var(--yellow);
+    }
+
+    svg {
       color: var(--yellow);
     }
   }

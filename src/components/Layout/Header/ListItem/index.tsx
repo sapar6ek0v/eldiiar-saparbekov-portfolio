@@ -1,3 +1,4 @@
+import { stiffnessVariants } from '../../../../constants/animation-constants';
 import { cvUrl } from '../../../../constants/cvUrl';
 import { LinkBtn } from '../../../styles';
 import useNavbarData from '../hooks/useNavbarData';
@@ -24,6 +25,7 @@ const ListItem = () => {
       <LinkBtn
         href={cvUrl}
         target='_blank'
+        variants={stiffnessVariants}
       >
         Resume
       </LinkBtn>

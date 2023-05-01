@@ -12,3 +12,20 @@ export const variants = {
   }),
   exit: { opacity: 0, x: -0, y: 20 },
 };
+
+export const stiffnessVariants = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+};

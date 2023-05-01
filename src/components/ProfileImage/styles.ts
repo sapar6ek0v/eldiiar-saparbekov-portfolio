@@ -24,6 +24,7 @@ export const Inner = styled(motion.div)`
   width: 26vw;
   height: 32vw;
   /* transform: rotateY(11deg); */
+  transition: all 300ms cubic-bezier(0.55, 0.51, 0.19, 0.85);
 
   @media ${({ theme }) => theme.bp.bpTinyS} {
     width: 100%;

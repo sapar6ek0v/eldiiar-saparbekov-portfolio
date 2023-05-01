@@ -20,6 +20,7 @@ const ProfileImage: FC = () => {
   const innerRef = useRef<HTMLDivElement | null>(null);
 
   const matches = useMediaQuery('(min-width: 768px)');
+
   const { scrollYProgress } = useScroll({
     target: innerRef,
     offset: ["end end", "end start"]

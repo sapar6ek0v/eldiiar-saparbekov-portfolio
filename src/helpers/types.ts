@@ -1,3 +1,5 @@
+import { IconType } from 'react-icons';
+
 export type Project = {
   id: string;
   imageUrl: string;
@@ -43,4 +45,5 @@ export type NavLink = {
   id: string;
   path: string;
   title: string;
+  icon: IconType;
 };

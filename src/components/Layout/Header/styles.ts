@@ -7,6 +7,7 @@ export const HeaderFixedContainer = styled(motion.header)`
   width: 100%;
   z-index: 4;
   background: transparent;
+  transition: background 300ms cubic-bezier(0.32, 0.72, 0.87, 0.89);
 `;
 
 export const HeaderContainer = styled.nav`

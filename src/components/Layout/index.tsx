@@ -7,7 +7,6 @@ import ModalProvider from '../../context/modalContext';
 import theme from '../../styles/theme';
 import GlobalStyles from '../../styles/GlobalStyles';
 import ProjectDetailsModal from '../ProjectDetailsModal';
-import Cursor from '../Cursor';
 import Header from './Header';
 import { LayoutWrapper, Container, Grid } from './styles';
 
@@ -23,7 +22,6 @@ const Layout: FC<Props> = ({ children }) => {
           <LayoutWrapper>
             <GlobalStyles />
             <Notifications position="top-right" />
-            {/* <Cursor /> */}
             <Header />
             <Container>
               <Grid>

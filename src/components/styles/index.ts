@@ -1,7 +1,7 @@
-import Link from 'next/link';
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const LinkBtn = styled(Link)`
+export const LinkBtn = styled(motion.a)`
   cursor: pointer;
   font-size: var(--font-size-link-btn);
   font-weight: 500;

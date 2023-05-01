@@ -8,5 +8,6 @@ export const Group = styled(motion.ul)`
 
   @media ${({ theme }) => theme.mixins.bpTinyS} {
     flex-direction: column;
+    align-items: baseline;
   }
 `;

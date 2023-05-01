@@ -2,7 +2,6 @@ import { FC } from 'react'
 import { Highlight } from '@mantine/core'
 
 import { variants } from '../../../constants/animation-constants'
-import useMousePosition from '../../../helpers/hooks/useMousePosition'
 import {
   ExtraSmallTitle,
   TitleLine,
@@ -15,7 +14,6 @@ import {
 } from '../styles'
 
 const AboutMe: FC = () => {
-  const { textEnter, textLeave } = useMousePosition();
 
   return (
     <ComponentWrapper
@@ -34,10 +32,7 @@ const AboutMe: FC = () => {
               variants={variants}
               custom={1.4}
             >
-              <span
-                onMouseEnter={textEnter}
-                onMouseLeave={textLeave}
-              >
+              <span>
                 Hi, I&apos;m Eldiiar, <br /> Frontend Developer
               </span>
             </Title>
