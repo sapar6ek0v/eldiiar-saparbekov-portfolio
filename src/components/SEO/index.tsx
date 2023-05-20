@@ -15,6 +15,7 @@ const SEO: FC<Props> = ({ title, description, name, type, keywords, href }) => {
     <Head>
       {/* Standard metadata tags */}
       <title>{title}</title>
+      <meta name="google-site-verification" content="RaMy2C81mDtN68q8CBPGJKrePdeSmYRKbvfUXzPgKL4" />
       <meta name="description" content={description} data-rh="true" />
       <meta name="keywords" content={keywords} />
       <meta name="author" content={name} />
