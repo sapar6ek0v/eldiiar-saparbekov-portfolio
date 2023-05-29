@@ -69,7 +69,7 @@ const ContactForm: FC = () => {
       initial='hidden'
       whileInView='enter'
       exit='exit'
-      viewport={{ amount: 0.2 }}
+      viewport={{ amount: 0.2, once: true }}
       onSubmit={form.onSubmit(handleSubmit)}
     >
       <InputBox

@@ -17,6 +17,7 @@ const Hero: FC = () => {
       initial='hidden'
       whileInView='enter'
       exit='exit'
+      viewport={{ once: true }}
       data-scroll-section
     >
       <ComponentContainer>

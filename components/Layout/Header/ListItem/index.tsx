@@ -1,9 +1,15 @@
+import { FC } from 'react';
+
 import { stiffnessVariants } from '../../../../constants/animation-constants';
 import { cvUrl } from '../../../../constants/cvUrl';
 import { LinkBtn } from '../../../styles';
 import useNavbarData from '../hooks/useNavbarData';
 import NavLink from './NavLink';
 import { Group } from './styles';
+
+interface Props {
+  onClose?: () => void;
+}
 
 const variants = {
   open: {
@@ -14,14 +20,14 @@ const variants = {
   }
 };
 
-const ListItem = () => {
+const ListItem: FC<Props> = ({ onClose }) => {
   const navLinks = useNavbarData();
 
   return (
     <Group
       variants={variants}
     >
-      {navLinks.map((navLink) => <NavLink key={navLink.id} navLink={navLink} />)}
+      {navLinks.map((navLink) => <NavLink key={navLink.id} navLink={navLink} onClose={onClose} />)}
       <LinkBtn
         href={cvUrl}
         target='_blank'

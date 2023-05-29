@@ -1,13 +1,17 @@
-import { useMotionValue, useTransform } from "framer-motion"
+import { useRef } from 'react'
+import { useMotionValue, useTransform, useScroll } from "framer-motion"
 
 import { variants } from '../../../../constants/animation-constants'
 import { ScrollBar, ScrollTitle, Wrapper } from "./styles"
 
 const InformScrollBar = () => {
-  const x = useMotionValue(0)
-  const input = [9, 90]
-  const output = [1, 0]
-  const opacity = useTransform(x, input, output)
+  const innerRef = useRef<HTMLDivElement | null>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: innerRef,
+    offset: ["end end", "end start"]
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.25]);
 
   return (
     <Wrapper
@@ -16,7 +20,7 @@ const InformScrollBar = () => {
       exit='exit'
       variants={variants}
       viewport={{ amount: 0.1 }}
-      style={{ x, opacity }}
+      style={{ opacity }}
     >
       <ScrollBar />
       <ScrollTitle>Scroll</ScrollTitle>

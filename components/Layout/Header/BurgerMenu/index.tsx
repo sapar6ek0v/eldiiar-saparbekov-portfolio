@@ -33,7 +33,7 @@ const BurgerMenu = () => {
     >
       <BurgerButton toggle={() => toggleOpen()} isOpen={isOpen} />
       <Background variants={sidebar}>
-        <ListItem />
+        <ListItem onClose={() => toggleOpen()} />
       </Background>
     </motion.div>
   )

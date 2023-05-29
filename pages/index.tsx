@@ -8,7 +8,7 @@ const ProfileImage = lazy(() => import('../components/ProfileImage'));
 const AdditionalInformation = lazy(() => import('../components/AdditionalInformation'));
 
 export default function Home() {
-  const [preloader, setPreload] = useState(true);
+  const [preloader, setPreload] = useState<boolean>(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -73,15 +73,11 @@ export default function Home() {
       />
 
 
-      <Suspense fallback={<Loader />} >
-        {
-          preloader ?
-            <Loader isShow={preloader} /> :
-            <Layout>
-              <ProfileImage />
-              <AdditionalInformation />
-            </Layout>
-        }
+      <Suspense fallback={<Loader isShow={preloader} />}>
+        <Layout>
+          <ProfileImage />
+          <AdditionalInformation />
+        </Layout>
       </Suspense>
     </>
   );

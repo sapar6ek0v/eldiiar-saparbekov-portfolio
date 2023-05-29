@@ -25,7 +25,6 @@ const ProfileImage: FC = () => {
     target: innerRef,
     offset: ["end end", "end start"]
   });
-  console.log({ scrollYProgress });
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.25]);
   const transform = useTransform(scrollYProgress,
     [0, 0.5],

@@ -116,7 +116,7 @@ const Skills: FC = () => {
       initial='hidden'
       whileInView='enter'
       exit='exit'
-      viewport={{ amount: 0.3 }}
+      viewport={{ amount: 0.3,  once: true }}
       data-scroll-section
     >
       <ComponentContainer>

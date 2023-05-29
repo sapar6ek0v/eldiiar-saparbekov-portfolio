@@ -68,11 +68,11 @@ export const Description = styled(motion.p)`
 `;
 
 export const ComponentWrapper = styled(motion.section)`
-  padding-top: clamp(0.5rem, calc(-1.18rem + 8.41vw), 4.81rem);
-  padding-bottom: clamp(2.06rem, calc(6.32rem + -5.98vw), 5.13rem);
+  --pb: clamp(2.06rem, calc(6.32rem + -5.98vw), 5.13rem);
+  padding-top: 104px;
 
   &:last-child {
-    padding-bottom: 0;
+    padding-bottom: var(--pb);
   }
 `;
 

@@ -7,7 +7,6 @@ const Canvas = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   const windowSize = useWindowDimensions();
-  console.log({ windowSize });
 
   useEffect(() => {
     const canvas = canvasRef.current;
